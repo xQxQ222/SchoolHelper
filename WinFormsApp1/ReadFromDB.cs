@@ -3,9 +3,9 @@ using System.Data;
 
 namespace WinFormsApp1
 {
-    class ReadFromDB
+    class ReadFromDB//класс для хранения методов, где мы что-то получаем с БД
     {
-        public static bool ReadCurrentUser(string login, string password)
+        public static bool ReadCurrentUser(string login, string password)//метод, возвращающий булевое значение, в зависимости от того, был ли вход в аккаунт успешным 
         {
             DB db = new DB();
             bool userIsLoggedInSuccessfully;
@@ -32,7 +32,7 @@ namespace WinFormsApp1
             return userIsLoggedInSuccessfully;
         }
 
-        public static List<string> GetAdministrators()
+        public static List<string> GetAdministrators()//метод, где мы получаем из БД таблицы users пользователей со статусом "Администратор"
         {
             DB db = new DB();
             List<string> list = new List<string>();
@@ -63,7 +63,7 @@ namespace WinFormsApp1
             return list;
         }
 
-        public static bool CheckIfEmailInBD(string email) // тут точно строковый тип???
+        public static bool CheckIfEmailInBD(string email) //метод, возвращающий true если в БД уже есть пользователь с такой электронной почтой и false, если такового нет
         {
             DB db = new DB();
             DataTable dt = new DataTable();
@@ -79,7 +79,7 @@ namespace WinFormsApp1
             return dt.Rows.Count > 0;
         }
 
-        public static bool CheckIfNameOfUserInBD(string nameOfUser)
+        public static bool CheckIfNameOfUserInBD(string nameOfUser)//метод, возвращающий true если в БД уже есть пользователь с таким логином и false, если такового нет
         {
             DB db = new DB();
             DataTable dt = new DataTable();
@@ -95,7 +95,7 @@ namespace WinFormsApp1
             return dt.Rows.Count > 0;
         }
 
-        public static Tuple<List<string>, Dictionary<string, string>> GetRecipients()
+        public static Tuple<List<string>, Dictionary<string, string>> GetRecipients()//метод, который в зависимости от статуса текущего пользователя возвращает список доступных получателей
         {
             var list = new List<string>();
             var dic = new Dictionary<string, string>();
@@ -103,7 +103,7 @@ namespace WinFormsApp1
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             MySqlCommand command = null;
-            if (User.Current._status == "Ученик")
+            if (User.Current._status == "Ученик")//выбор команды в зависимости от статуса пользователя
                 command = new MySqlCommand("SELECT * FROM `users` WHERE `status` LIKE 'Учитель'", db.getConnection());
             else if (User.Current._status == "Учитель")
                 command = new MySqlCommand("SELECT * FROM `users` WHERE 'status' LIKE 'Учитель' OR 'Ученик'", db.getConnection());
