@@ -8,7 +8,7 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void RegistrationButton_Click(object sender, EventArgs e)
+        private void RegistrationButton_Click(object sender, EventArgs e)//ћетод, который срабатывает при нажатии кнопки "–егистраци€". ѕерекидывает на окно регистрации аккаунта
         {
             var regForm = new RegistrationForm();
             regForm.Show();
@@ -17,7 +17,7 @@ namespace WinFormsApp1
 
         
 
-        private void LoginButton_Click(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)//ћетод, который срабатывает при нажатии кнопки "¬ход". ѕерекидывает на окно входа в аккаунт
         {
             var logForm = new LoginForm();
             logForm.Show();
@@ -26,13 +26,13 @@ namespace WinFormsApp1
 
         
 
-        private void ExitButton_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)//ћетод кнопки закрыти€ приложени€
         {
             Application.Exit();
         }
 
-        Point lastPoint;
-        private void StartScreen_MouseMove(object sender, MouseEventArgs e)
+        Point lastPoint;//ѕеременна€, в которой хранитс€ последн€€ точка расположени€ окна на экране пользовател€
+        private void StartScreen_MouseMove(object sender, MouseEventArgs e)//ћетод, позвол€ющий перемещать данное окно "StartScreen" на экране пользовател€, путем зажати€ левой кнопки мыши
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -41,7 +41,7 @@ namespace WinFormsApp1
             }
         }
 
-        private void StartScreen_MouseDown(object sender, MouseEventArgs e)
+        private void StartScreen_MouseDown(object sender, MouseEventArgs e)//ћетод, срабатывающий после того, как пользователь перестанет удерживать левую кнопку мыши. »змен€ет значение переменной lastPoint
         {
             lastPoint = new Point(e.X, e.Y);
         }
