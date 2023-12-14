@@ -4,7 +4,7 @@ namespace WinFormsApp1.OpenWeather
 {
     class OpenWeather
     {
-        public coord coord;//переменная, хранящая широту и долготу
+        public coord coord;//переменная, хранящая координаты - широту и долготу
         public weather[] weather;//переменная, хранящая массив значений информации о погоде
 
         [JsonProperty("base")]
@@ -20,7 +20,7 @@ namespace WinFormsApp1.OpenWeather
 
         public double dt;
 
-        public sys sys;//переменная, хранящая основную информацию о городе, в котором смотрят погоду
+        public sys sys;//переменная, хранящая информацию о времени восхода и заката, а также информацию о интересующем месте (город, в котором смотрят погоду)
 
         public int id;
 
