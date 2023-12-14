@@ -75,6 +75,7 @@
             ShowPassword.TabIndex = 19;
             ShowPassword.Text = "Показать пароль";
             ShowPassword.UseVisualStyleBackColor = true;
+            ShowPassword.CheckedChanged += ShowPassword_CheckedChanged;
             // 
             // pictureBox2
             // 
@@ -106,6 +107,7 @@
             button1.TabIndex = 16;
             button1.Text = "Назад";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += BackButton_Click;
             // 
             // label3
             // 
@@ -166,6 +168,7 @@
             RegistrationButton.TabIndex = 10;
             RegistrationButton.Text = "Зарег-ся";
             RegistrationButton.UseVisualStyleBackColor = true;
+            RegistrationButton.Click += RegistrationButton_Click;
             // 
             // ExitButton
             // 
@@ -177,6 +180,7 @@
             ExitButton.Size = new Size(34, 34);
             ExitButton.TabIndex = 28;
             ExitButton.Text = "X";
+            ExitButton.Click += EscapeButton_Click;
             // 
             // pictureBox3
             // 
@@ -250,6 +254,7 @@
             status.Name = "status";
             status.Size = new Size(200, 23);
             status.TabIndex = 36;
+            status.SelectedIndexChanged += status_SelectedIndexChanged;
             // 
             // label5
             // 
@@ -320,6 +325,7 @@
             button2.TabIndex = 43;
             button2.Text = "Подтвердить";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += ConfirmEmailButton_Click;
             // 
             // codeField
             // 
@@ -361,6 +367,7 @@
             ConfirmCodeButton.TabIndex = 49;
             ConfirmCodeButton.Text = "Подтвердить";
             ConfirmCodeButton.UseVisualStyleBackColor = true;
+            ConfirmCodeButton.Click += ConfirmCodeButton_Click;
             // 
             // RegistrationForm
             // 
@@ -402,6 +409,9 @@
             Name = "RegistrationForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Form2";
+            Load += RegistrationForm_Load;
+            MouseDown += RegistrationForm_MouseDown;
+            MouseMove += RegistrationForm_MouseMove;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

@@ -121,6 +121,7 @@
             comboBox1.Size = new Size(136, 23);
             comboBox1.TabIndex = 4;
             comboBox1.Visible = false;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label4
             // 
@@ -165,6 +166,7 @@
             button1.TabIndex = 11;
             button1.Text = "Вернуться";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label8
             // 
@@ -176,6 +178,7 @@
             label8.Size = new Size(34, 34);
             label8.TabIndex = 29;
             label8.Text = "X";
+            label8.Click += label8_Click;
             // 
             // Journal
             // 
@@ -197,6 +200,8 @@
             Name = "Journal";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Journal";
+            MouseDown += Journal_MouseDown;
+            MouseMove += Journal_MouseMove;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

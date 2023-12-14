@@ -73,6 +73,7 @@
             button1.TabIndex = 3;
             button1.Text = "Выбрать фото\r\n";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -99,6 +100,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(225, 23);
             comboBox1.TabIndex = 6;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -132,6 +134,9 @@
             button3.TabIndex = 17;
             button3.Text = "Назад";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            button3.MouseDown += button3_MouseDown;
+            button3.MouseMove += button3_MouseMove;
             // 
             // label4
             // 
@@ -143,6 +148,7 @@
             label4.Size = new Size(41, 43);
             label4.TabIndex = 18;
             label4.Text = "X";
+            label4.Click += label4_Click;
             // 
             // panel1
             // 
@@ -173,6 +179,7 @@
             Name = "CreateNews";
             StartPosition = FormStartPosition.CenterParent;
             Text = "CreateNews";
+            Load += CreateNews_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);

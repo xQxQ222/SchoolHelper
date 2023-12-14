@@ -47,6 +47,7 @@
             RegistrationButton.TabIndex = 0;
             RegistrationButton.Text = "Регистрация";
             RegistrationButton.UseVisualStyleBackColor = true;
+            RegistrationButton.Click += RegistrationButton_Click;
             // 
             // LoginButton
             // 
@@ -61,6 +62,7 @@
             LoginButton.TabIndex = 1;
             LoginButton.Text = "Вход";
             LoginButton.UseVisualStyleBackColor = true;
+            LoginButton.Click += LoginButton_Click;
             // 
             // label1
             // 
@@ -82,6 +84,7 @@
             label8.Size = new Size(34, 34);
             label8.TabIndex = 27;
             label8.Text = "X";
+            label8.Click += ExitButton_Click;
             // 
             // StartScreen
             // 
@@ -98,6 +101,8 @@
             Name = "StartScreen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            MouseDown += StartScreen_MouseDown;
+            MouseMove += StartScreen_MouseMove;
             ResumeLayout(false);
             PerformLayout();
         }

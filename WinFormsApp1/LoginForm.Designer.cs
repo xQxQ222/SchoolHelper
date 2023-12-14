@@ -54,6 +54,7 @@
             LoginButton.TabIndex = 0;
             LoginButton.Text = "Войти";
             LoginButton.UseVisualStyleBackColor = true;
+            LoginButton.Click += LoginButton_Click;
             // 
             // label1
             // 
@@ -114,6 +115,7 @@
             backButton.TabIndex = 6;
             backButton.Text = "Назад";
             backButton.UseVisualStyleBackColor = true;
+            backButton.Click += BackButton_Click;
             // 
             // loginPic
             // 
@@ -145,6 +147,7 @@
             ShowPassword.TabIndex = 9;
             ShowPassword.Text = "Показать пароль";
             ShowPassword.UseVisualStyleBackColor = true;
+            ShowPassword.CheckedChanged += ShowPassword_CheckedChanged;
             // 
             // escapeButton
             // 
@@ -156,6 +159,7 @@
             escapeButton.Size = new Size(34, 34);
             escapeButton.TabIndex = 27;
             escapeButton.Text = "X";
+            escapeButton.Click += EscapeButton_Click;
             // 
             // forgotPassLinkLabel
             // 
@@ -166,6 +170,7 @@
             forgotPassLinkLabel.TabIndex = 28;
             forgotPassLinkLabel.TabStop = true;
             forgotPassLinkLabel.Text = "Забыли пароль?";
+            forgotPassLinkLabel.LinkClicked += ForgotPassLinkLabel_Click;
             // 
             // LoginForm
             // 
@@ -188,6 +193,9 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterParent;
+            Text = "LoginForm";
+            MouseDown += LoginForm_MouseDown;
+            MouseMove += LoginForm_MouseMove;
             ((System.ComponentModel.ISupportInitialize)loginPic).EndInit();
             ((System.ComponentModel.ISupportInitialize)passwordPic).EndInit();
             ResumeLayout(false);

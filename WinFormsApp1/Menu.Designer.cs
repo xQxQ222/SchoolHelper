@@ -189,6 +189,7 @@
             confirmAccountsButton.TabIndex = 11;
             confirmAccountsButton.Text = "Подтвердить аккаунты";
             confirmAccountsButton.UseVisualStyleBackColor = false;
+            confirmAccountsButton.Click += button4_Click;
             // 
             // panel8
             // 
@@ -281,6 +282,7 @@
             mailButton.TabIndex = 6;
             mailButton.Text = "Почта";
             mailButton.UseVisualStyleBackColor = false;
+            mailButton.Click += button3_Click;
             // 
             // JournalButton
             // 
@@ -295,6 +297,7 @@
             JournalButton.TabIndex = 5;
             JournalButton.Text = "Журнал";
             JournalButton.UseVisualStyleBackColor = false;
+            JournalButton.Click += button2_Click;
             // 
             // tableButton
             // 
@@ -308,6 +311,7 @@
             tableButton.TabIndex = 4;
             tableButton.Text = "Расписание";
             tableButton.UseVisualStyleBackColor = false;
+            tableButton.Click += button1_Click;
             // 
             // label11
             // 
@@ -481,6 +485,7 @@
             createNewsButton.SizeMode = PictureBoxSizeMode.Zoom;
             createNewsButton.TabIndex = 11;
             createNewsButton.TabStop = false;
+            createNewsButton.Click += pictureBox10_Click;
             // 
             // pictureBox16
             // 
@@ -667,6 +672,7 @@
             label13.Size = new Size(34, 34);
             label13.TabIndex = 29;
             label13.Text = "X";
+            label13.Click += label13_Click;
             // 
             // panel7
             // 
@@ -686,6 +692,7 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 31;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // exitButton
             // 
@@ -699,6 +706,7 @@
             exitButton.TabIndex = 33;
             exitButton.Text = "Выйти";
             exitButton.UseVisualStyleBackColor = false;
+            exitButton.Click += exitButton_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -722,6 +730,7 @@
             profileButton.TabIndex = 0;
             profileButton.Text = "Профиль";
             profileButton.UseVisualStyleBackColor = false;
+            profileButton.Click += profileButton_Click;
             // 
             // button5
             // 
@@ -838,6 +847,9 @@
             Name = "Menu";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Menu";
+            Load += Menu_Load;
+            MouseDown += Menu_MouseDown;
+            MouseMove += Menu_MouseMove;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             panel9.ResumeLayout(false);

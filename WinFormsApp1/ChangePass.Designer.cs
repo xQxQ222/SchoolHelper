@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             pictureBox4 = new PictureBox();
-            emailField = new TextBox();
+            emailBox = new TextBox();
             label6 = new Label();
             pictureBox1 = new PictureBox();
-            CodeField = new TextBox();
+            CodeBox = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            SendCodeButton = new Button();
-            NextButton = new Button();
+            button1 = new Button();
+            button2 = new Button();
             pictureBox2 = new PictureBox();
-            newPassField = new TextBox();
+            newPass = new TextBox();
             label3 = new Label();
-            BackButton = new Button();
-            ShowPasswordCheckBox = new CheckBox();
+            button3 = new Button();
+            ShowPassword = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -57,14 +57,14 @@
             pictureBox4.TabIndex = 43;
             pictureBox4.TabStop = false;
             // 
-            // emailField
+            // emailBox
             // 
-            emailField.Cursor = Cursors.IBeam;
-            emailField.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            emailField.Location = new Point(144, 89);
-            emailField.Name = "emailField";
-            emailField.Size = new Size(202, 29);
-            emailField.TabIndex = 42;
+            emailBox.Cursor = Cursors.IBeam;
+            emailBox.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            emailBox.Location = new Point(144, 89);
+            emailBox.Name = "emailBox";
+            emailBox.Size = new Size(202, 29);
+            emailBox.TabIndex = 42;
             // 
             // label6
             // 
@@ -86,14 +86,14 @@
             pictureBox1.TabIndex = 46;
             pictureBox1.TabStop = false;
             // 
-            // CodeField
+            // CodeBox
             // 
-            CodeField.Cursor = Cursors.IBeam;
-            CodeField.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            CodeField.Location = new Point(144, 178);
-            CodeField.Name = "CodeField";
-            CodeField.Size = new Size(79, 29);
-            CodeField.TabIndex = 45;
+            CodeBox.Cursor = Cursors.IBeam;
+            CodeBox.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            CodeBox.Location = new Point(144, 178);
+            CodeBox.Name = "CodeBox";
+            CodeBox.Size = new Size(79, 29);
+            CodeBox.TabIndex = 45;
             // 
             // label1
             // 
@@ -116,29 +116,29 @@
             label2.TabIndex = 47;
             label2.Text = "Введите почту, привязанную к вашему аккаунту";
             // 
-            // SendCodeButton
+            // button1
             // 
-            SendCodeButton.FlatStyle = FlatStyle.Flat;
-            SendCodeButton.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            SendCodeButton.Location = new Point(352, 92);
-            SendCodeButton.Name = "SendCodeButton";
-            SendCodeButton.Size = new Size(99, 29);
-            SendCodeButton.TabIndex = 48;
-            SendCodeButton.Text = "Отправить код";
-            SendCodeButton.UseVisualStyleBackColor = true;
-            
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(352, 92);
+            button1.Name = "button1";
+            button1.Size = new Size(99, 29);
+            button1.TabIndex = 48;
+            button1.Text = "Отправить код";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click +=SendMessageButton_Click;
             // 
-            // NextButton
+            // button2
             // 
-            NextButton.FlatStyle = FlatStyle.Flat;
-            NextButton.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            NextButton.Location = new Point(502, 294);
-            NextButton.Name = "NextButton";
-            NextButton.Size = new Size(76, 43);
-            NextButton.TabIndex = 49;
-            NextButton.Text = "Далее";
-            NextButton.UseVisualStyleBackColor = true;
-            
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(502, 294);
+            button2.Name = "button2";
+            button2.Size = new Size(76, 43);
+            button2.TabIndex = 49;
+            button2.Text = "Далее";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += ButtonNext_Click;
             // 
             // pictureBox2
             // 
@@ -150,15 +150,15 @@
             pictureBox2.TabIndex = 52;
             pictureBox2.TabStop = false;
             // 
-            // newPassField
+            // newPass
             // 
-            newPassField.Cursor = Cursors.IBeam;
-            newPassField.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            newPassField.Location = new Point(144, 255);
-            newPassField.Name = "newPassField";
-            newPassField.Size = new Size(202, 29);
-            newPassField.TabIndex = 51;
-            newPassField.UseSystemPasswordChar = true;
+            newPass.Cursor = Cursors.IBeam;
+            newPass.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            newPass.Location = new Point(144, 255);
+            newPass.Name = "newPass";
+            newPass.Size = new Size(202, 29);
+            newPass.TabIndex = 51;
+            newPass.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -170,29 +170,30 @@
             label3.TabIndex = 50;
             label3.Text = "Новый пароль";
             // 
-            // BackButton
+            // button3
             // 
-            BackButton.Cursor = Cursors.Hand;
-            BackButton.FlatStyle = FlatStyle.Flat;
-            BackButton.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BackButton.Location = new Point(22, 295);
-            BackButton.Name = "BackButton";
-            BackButton.Size = new Size(76, 41);
-            BackButton.TabIndex = 53;
-            BackButton.Text = "Назад";
-            BackButton.UseVisualStyleBackColor = true;
-           
+            button3.Cursor = Cursors.Hand;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(22, 295);
+            button3.Name = "button3";
+            button3.Size = new Size(76, 41);
+            button3.TabIndex = 53;
+            button3.Text = "Назад";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += BackButton_Click;
             // 
-            // ShowPasswordCheckBox
+            // ShowPassword
             // 
-            ShowPasswordCheckBox.AutoSize = true;
-            ShowPasswordCheckBox.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            ShowPasswordCheckBox.Location = new Point(352, 264);
-            ShowPasswordCheckBox.Name = "ShowPasswordCheckBox";
-            ShowPasswordCheckBox.Size = new Size(126, 20);
-            ShowPasswordCheckBox.TabIndex = 54;
-            ShowPasswordCheckBox.Text = "Показать пароль";
-            ShowPasswordCheckBox.UseVisualStyleBackColor = true;
+            ShowPassword.AutoSize = true;
+            ShowPassword.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            ShowPassword.Location = new Point(352, 264);
+            ShowPassword.Name = "ShowPassword";
+            ShowPassword.Size = new Size(126, 20);
+            ShowPassword.TabIndex = 54;
+            ShowPassword.Text = "Показать пароль";
+            ShowPassword.UseVisualStyleBackColor = true;
+            ShowPassword.CheckedChanged += ShowPassword_CheckedChanged;
             // 
             // ChangePass
             // 
@@ -200,25 +201,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(600, 350);
-            Controls.Add(ShowPasswordCheckBox);
-            Controls.Add(BackButton);
+            Controls.Add(ShowPassword);
+            Controls.Add(button3);
             Controls.Add(pictureBox2);
-            Controls.Add(newPassField);
+            Controls.Add(newPass);
             Controls.Add(label3);
-            Controls.Add(NextButton);
-            Controls.Add(SendCodeButton);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
-            Controls.Add(CodeField);
+            Controls.Add(CodeBox);
             Controls.Add(label1);
             Controls.Add(pictureBox4);
-            Controls.Add(emailField);
+            Controls.Add(emailBox);
             Controls.Add(label6);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ChangePass";
             StartPosition = FormStartPosition.CenterParent;
             Text = "ChangePass";
-            
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -229,18 +229,18 @@
         #endregion
 
         private PictureBox pictureBox4;
-        private TextBox emailField;
+        private TextBox emailBox;
         private Label label6;
         private PictureBox pictureBox1;
-        private TextBox CodeField;
+        private TextBox CodeBox;
         private Label label1;
         private Label label2;
-        private Button SendCodeButton;
-        private Button NextButton;
+        private Button button1;
+        private Button button2;
         private PictureBox pictureBox2;
-        private TextBox newPassField;
+        private TextBox newPass;
         private Label label3;
-        private Button BackButton;
-        private CheckBox ShowPasswordCheckBox;
+        private Button button3;
+        private CheckBox ShowPassword;
     }
 }

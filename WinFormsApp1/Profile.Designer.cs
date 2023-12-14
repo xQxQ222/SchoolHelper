@@ -53,6 +53,7 @@
             label1.Size = new Size(41, 43);
             label1.TabIndex = 0;
             label1.Text = "X";
+            label1.Click += label1_Click;
             // 
             // pictureBox1
             // 
@@ -75,6 +76,7 @@
             button1.TabIndex = 2;
             button1.Text = "Сменить фотографию";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -167,6 +169,7 @@
             button2.TabIndex = 42;
             button2.Text = "Назад";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Profile
             // 
@@ -190,6 +193,7 @@
             Name = "Profile";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Profile";
+            Load += Profile_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
