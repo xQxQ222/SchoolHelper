@@ -23,7 +23,7 @@ namespace WinFormsApp1
             else
                 MessageBox.Show("Почта не найдена");
         }
-        public int code;
+        private int code;//Переменная с кодом подтверждения
 
         public int SendMessage(string adressTo)//Метод отправки сообщения с кодом подтверждения
         {

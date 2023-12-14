@@ -60,6 +60,7 @@
             label11.Size = new Size(34, 34);
             label11.TabIndex = 29;
             label11.Text = "X";
+            label11.Click += ExitButton_Click;
             // 
             // panel1
             // 
@@ -118,6 +119,7 @@
             Send.TabIndex = 34;
             Send.Text = "Отправить";
             Send.UseVisualStyleBackColor = true;
+            Send.Click += SendMessageButton_Click;
             // 
             // richTextBox1
             // 
@@ -221,6 +223,7 @@
             button1.TabIndex = 41;
             button1.Text = "Назад";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += BackButton_Click;
             // 
             // Chat
             // 

@@ -17,17 +17,12 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void EscapeButton_Click(object sender, EventArgs e)//метод кнопки, завершающей выполнение программы
         {
             Application.Exit();
         }
 
-        private void name_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Profile_Load(object sender, EventArgs e)
+        private void Profile_Load(object sender, EventArgs e)//Метод, вызываемый при загрузке формы. Отображает на экране все основные данные пользователя
         {
             name.Text = User.Current._name;
             surename.Text = User.Current._surename;
@@ -37,7 +32,7 @@ namespace WinFormsApp1
             email.Text = User.Current._email;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SetPhotoButton_Click(object sender, EventArgs e)//Метод, позволяющий пользователю загрузить свою фотографию
         {
             using (var openFileDialog = new OpenFileDialog())
             {
@@ -51,7 +46,7 @@ namespace WinFormsApp1
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void BackButton_Click(object sender, EventArgs e)//метод, перекидывающий назад на форму "Меню"
         {
             var form = new Menu();
             form.Show();

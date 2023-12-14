@@ -51,6 +51,7 @@
             verifyUser.RowTemplate.Height = 25;
             verifyUser.Size = new Size(640, 161);
             verifyUser.TabIndex = 0;
+            verifyUser.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
@@ -104,6 +105,7 @@
             button3.TabIndex = 54;
             button3.Text = "Назад";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label8
             // 
@@ -115,6 +117,7 @@
             label8.Size = new Size(34, 34);
             label8.TabIndex = 55;
             label8.Text = "X";
+            label8.Click += label8_Click;
             // 
             // VerifyUsers
             // 
@@ -130,6 +133,7 @@
             Name = "VerifyUsers";
             StartPosition = FormStartPosition.CenterParent;
             Text = "VerifyUsers";
+            Load += VerifyUsers_Load;
             ((System.ComponentModel.ISupportInitialize)verifyUser).EndInit();
             ResumeLayout(false);
             PerformLayout();
