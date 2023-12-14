@@ -14,7 +14,7 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void RegistrationForm_Load(object sender, EventArgs e)
+        private void RegistrationForm_Load(object sender, EventArgs e)//Метод, вызываемый при загрузке формы. Заполняет выбор статуса заранее определенными константами
         {
             List<string> list = new List<string>
             {
@@ -33,7 +33,7 @@ namespace WinFormsApp1
             ConfirmCodeButton.Enabled = false;
         }
 
-        private void ShowPassword_CheckedChanged(object sender, EventArgs e)
+        private void ShowPassword_CheckedChanged(object sender, EventArgs e)//Метод, который в зависимости от выбора пользователя показывать или не показывать пароль применяет метод UseSystemPasswordChar к PasswordField
         {
             if (ShowPassword.Checked == true)
                 PasswordField.UseSystemPasswordChar = false;
@@ -41,25 +41,25 @@ namespace WinFormsApp1
                 PasswordField.UseSystemPasswordChar = true;
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
+        private void BackButton_Click(object sender, EventArgs e)//Метод, который при нажатии на кнопку "Назад" перекидывает пользователя на окно "StartScreen"
         {
             var form = new StartScreen();
             form.Show();
             this.Close();
         }
 
-        private void EscapeButton_Click(object sender, EventArgs e)
+        private void EscapeButton_Click(object sender, EventArgs e)//Метод кнопки закрытия приложения
         {
             Application.Exit();
 
         }
-        Point lastPoint;
-        private void RegistrationForm_MouseDown(object sender, MouseEventArgs e)
+        Point lastPoint;//Переменная, в которой хранится последняя точка расположения окна на экране пользователя
+        private void RegistrationForm_MouseDown(object sender, MouseEventArgs e)//Метод, срабатывающий после того, как пользователь перестанет удерживать левую кнопку мыши. Изменяет значение переменной lastPoint
         {
             lastPoint = new Point(e.X, e.Y);
         }
 
-        private void RegistrationForm_MouseMove(object sender, MouseEventArgs e)
+        private void RegistrationForm_MouseMove(object sender, MouseEventArgs e)//Метод, позволяющий перемещать данное окно "StartScreen" на экране пользователя, путем зажатия левой кнопки мыши
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -68,14 +68,38 @@ namespace WinFormsApp1
             }
         }
 
-        private void RegistrationButton_Click(object sender, EventArgs e)
+        private void RegistrationButton_Click(object sender, EventArgs e)//Метод, при нажатии на кнопку "Регистрация", который проверяет базу данных на наличие пользователя с таким же логином или почтой, создает новый объект класса User, записывает нового пользователя в базу данных
         {
+            //if (checkUser() || checkEmail())
             if (ReadFromDB.CheckIfNameOfUserInBD(LoginField.Text) || ReadFromDB.CheckIfEmailInBD(emailField.Text))
             {
                 MessageBox.Show("Пользователь с таким логином или E-mail уже существует");
                 return;
             }
-            
+            //Тута лежит закоментированный предыдущий код
+            #region
+            //DB db = new DB();
+            //MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `password`, `name`, `last name`,`otchestvo`, `birthdate`, `status`,`email`) VALUES (@log,@pass,@name,@surename,@otch,@birthDate,@status,@email);", db.getConnection());
+
+            //command.Parameters.Add("@log", MySqlDbType.VarChar).Value = LoginField.Text;
+            //command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = PasswordField.Text;
+            //command.Parameters.Add("@name", MySqlDbType.Text).Value = name.Text;
+            //command.Parameters.Add("@surename", MySqlDbType.Text).Value = surname.Text;
+            //command.Parameters.Add("@otch", MySqlDbType.VarChar).Value = Otchestvo.Text;
+            //command.Parameters.Add("@birthDate", MySqlDbType.Date).Value = birthDate.Value;
+            //command.Parameters.Add("@status", MySqlDbType.Text).Value = status.Text;
+            //command.Parameters.Add("@email", MySqlDbType.VarChar).Value = emailBox.Text;
+
+            //db.openConnection();
+            //if (command.ExecuteNonQuery() == 1)
+            //    MessageBox.Show("Пользователь успешно зарегистрирован");
+            //else
+            //{
+            //    MessageBox.Show("Ошибка в регистрации. Проверьте заполнены ли все поля");
+            //    return;
+            //}
+            //db.closeConnection();
+            #endregion 
 
             User newUser = new User()
             {
@@ -89,7 +113,7 @@ namespace WinFormsApp1
                 _email = emailField.Text
             };
 
-            var userSuccessfullyRegistered = WriteToDB.RegisterANewUser(newUser);
+            var userSuccessfullyRegistered = WriteToDB.RegisterANewUser(newUser); // логически странно
 
             if (userSuccessfullyRegistered)
                 MessageBox.Show("Пользователь успешно зарегистрирован");
@@ -148,12 +172,12 @@ namespace WinFormsApp1
         //        return false;
         //}
         #endregion
-        private void status_SelectedIndexChanged(object sender, EventArgs e)
+        private void status_SelectedIndexChanged(object sender, EventArgs e)//Метод, позволяющий выбрать статус из ранее представленных
         {
             string stat = status.SelectedItem.ToString();
         }
 
-        private void ConfirmEmailButton_Click(object sender, EventArgs e)
+        private void ConfirmEmailButton_Click(object sender, EventArgs e)//Метод, 
         {
             emailField.Enabled = false;
             codeField.Enabled = true;
@@ -171,7 +195,7 @@ namespace WinFormsApp1
         int _code;
 
         bool isCorrectCode = false;
-        private void ConfirmCodeButton_Click(object sender, EventArgs e)
+        private void ConfirmCodeButton_Click(object sender, EventArgs e)//Метод, который проверяет условие правильности введенного с почты кода подтверждения
         {
             if (isCorrectEmailCode(_code))
             {
@@ -188,7 +212,7 @@ namespace WinFormsApp1
                 MessageBox.Show("Неверный код подтверждения");
             }
         }
-        public bool isCorrectEmailCode(int code)
+        public bool isCorrectEmailCode(int code)//Проверяет правильность кода с почты
         {
             if (codeField.Text == code.ToString() && codeField.Text != "0")
             {
@@ -196,27 +220,27 @@ namespace WinFormsApp1
             }
             return false;
         }
-        public int SendMessage(string adressTo)
+        public int SendMessage(string adressTo)//метод для отправки письма на почту пользователю с кодом подтверждения
         {
             emailField.Enabled = false;
             try
             {
-                string from = @"schoolhelper634@gmail.com";
-                string pass = "ewlr vryt jiey qyqa"; 
+                string from = @"schoolhelper634@gmail.com"; // адреса отправителя
+                string pass = "ewlr vryt jiey qyqa"; // пароль отправителя
                 MailMessage mess = new MailMessage();
-                mess.To.Add(adressTo); 
+                mess.To.Add(adressTo); // адрес получателя
                 mess.From = new MailAddress(from);
-                mess.Subject = "Одноразовый код для подтверждения почты"; 
+                mess.Subject = "Одноразовый код для подтверждения почты"; // тема
                 var r = new Random();
                 var code = r.Next(100000, 999999);
-                mess.Body = code.ToString(); 
+                mess.Body = code.ToString(); // текст сообщения
                 SmtpClient client = new SmtpClient();
-                client.Host = "smtp.gmail.com"; 
+                client.Host = "smtp.gmail.com"; //smtp-сервер отправителя
                 client.Port = 587;
                 client.EnableSsl = true;
                 client.Credentials = new NetworkCredential(from.Split('@')[0], pass);
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.Send(mess); 
+                client.Send(mess); // отправка пользователю
                 MessageBox.Show("Сообщение было отправлено на почту");
                 return code;
             }
