@@ -17,20 +17,19 @@ namespace WinFormsApp1
             this.Close();
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)//Метод закрытия приложения при нажатии на крестик
+        private void ExitButton_Click(object sender, EventArgs e)//Метод закрытия приложения
         {
             Application.Exit();
         }
 
         private void Chat_Load(object sender, EventArgs e)//Метод, вызываемый при загрузке формы. Добавляет в ComboBox имена доступных получателей
         {
-            var recip = ReadFromDB.GetRecipients();//метод описан в классе ReadFromDB
-            comboBox1.DataSource = recip.Item1;
+            comboBox1.DataSource = ReadFromDB.GetRecipients().Item1;//вставляем имена получателей в комбо бокс
         }
 
         private void SendMessageButton_Click(object sender, EventArgs e)//Метод, позволяющий пользователю отправить письмо во внутреннем чате программы другому пользователю
         {
-            var recip = ReadFromDB.GetRecipients();
+            var recip = ReadFromDB.GetRecipients();//доступные получатели
 
             WriteToDB.AddNewMessage(recip, comboBox1.Text, richTextBox1.Text);
 
