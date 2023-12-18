@@ -34,14 +34,14 @@
             LoginField = new TextBox();
             PasswordField = new TextBox();
             label3 = new Label();
-            backButton = new Button();
-            loginPic = new PictureBox();
-            passwordPic = new PictureBox();
+            button1 = new Button();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             ShowPassword = new CheckBox();
-            escapeButton = new Label();
-            forgotPassLinkLabel = new LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)loginPic).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)passwordPic).BeginInit();
+            label8 = new Label();
+            linkLabel1 = new LinkLabel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // LoginButton
@@ -54,7 +54,7 @@
             LoginButton.TabIndex = 0;
             LoginButton.Text = "Войти";
             LoginButton.UseVisualStyleBackColor = true;
-            LoginButton.Click += LoginButton_Click;
+            LoginButton.Click += button1_Click;
             // 
             // label1
             // 
@@ -84,6 +84,7 @@
             LoginField.Name = "LoginField";
             LoginField.Size = new Size(202, 29);
             LoginField.TabIndex = 3;
+            LoginField.TextChanged += textBox1_TextChanged;
             // 
             // PasswordField
             // 
@@ -94,6 +95,7 @@
             PasswordField.Size = new Size(202, 29);
             PasswordField.TabIndex = 4;
             PasswordField.UseSystemPasswordChar = true;
+            PasswordField.TextChanged += PasswordField_TextChanged;
             // 
             // label3
             // 
@@ -105,37 +107,37 @@
             label3.TabIndex = 5;
             label3.Text = "Авторизация";
             // 
-            // backButton
+            // button1
             // 
-            backButton.Cursor = Cursors.Hand;
-            backButton.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            backButton.Location = new Point(75, 486);
-            backButton.Name = "backButton";
-            backButton.Size = new Size(128, 41);
-            backButton.TabIndex = 6;
-            backButton.Text = "Назад";
-            backButton.UseVisualStyleBackColor = true;
-            backButton.Click += BackButton_Click;
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(75, 486);
+            button1.Name = "button1";
+            button1.Size = new Size(128, 41);
+            button1.TabIndex = 6;
+            button1.Text = "Назад";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
-            // loginPic
+            // pictureBox1
             // 
-            loginPic.Image = Properties.Resources._1564535_customer_user_userphoto_account_person_icon;
-            loginPic.Location = new Point(247, 228);
-            loginPic.Name = "loginPic";
-            loginPic.Size = new Size(30, 30);
-            loginPic.SizeMode = PictureBoxSizeMode.Zoom;
-            loginPic.TabIndex = 7;
-            loginPic.TabStop = false;
+            pictureBox1.Image = Properties.Resources._1564535_customer_user_userphoto_account_person_icon;
+            pictureBox1.Location = new Point(247, 228);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(30, 30);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
             // 
-            // passwordPic
+            // pictureBox2
             // 
-            passwordPic.Image = Properties.Resources._8201380_unlock_padlock_password_ui_lock_icon;
-            passwordPic.Location = new Point(247, 318);
-            passwordPic.Name = "passwordPic";
-            passwordPic.Size = new Size(30, 30);
-            passwordPic.SizeMode = PictureBoxSizeMode.StretchImage;
-            passwordPic.TabIndex = 8;
-            passwordPic.TabStop = false;
+            pictureBox2.Image = Properties.Resources._8201380_unlock_padlock_password_ui_lock_icon;
+            pictureBox2.Location = new Point(247, 318);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(30, 30);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
             // 
             // ShowPassword
             // 
@@ -149,28 +151,28 @@
             ShowPassword.UseVisualStyleBackColor = true;
             ShowPassword.CheckedChanged += ShowPassword_CheckedChanged;
             // 
-            // escapeButton
+            // label8
             // 
-            escapeButton.AutoSize = true;
-            escapeButton.Cursor = Cursors.Hand;
-            escapeButton.Font = new Font("Arial", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            escapeButton.Location = new Point(752, 0);
-            escapeButton.Name = "escapeButton";
-            escapeButton.Size = new Size(34, 34);
-            escapeButton.TabIndex = 27;
-            escapeButton.Text = "X";
-            escapeButton.Click += EscapeButton_Click;
+            label8.AutoSize = true;
+            label8.Cursor = Cursors.Hand;
+            label8.Font = new Font("Arial", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(752, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(34, 34);
+            label8.TabIndex = 27;
+            label8.Text = "X";
+            label8.Click += label8_Click;
             // 
-            // forgotPassLinkLabel
+            // linkLabel1
             // 
-            forgotPassLinkLabel.AutoSize = true;
-            forgotPassLinkLabel.Location = new Point(387, 350);
-            forgotPassLinkLabel.Name = "forgotPassLinkLabel";
-            forgotPassLinkLabel.Size = new Size(98, 15);
-            forgotPassLinkLabel.TabIndex = 28;
-            forgotPassLinkLabel.TabStop = true;
-            forgotPassLinkLabel.Text = "Забыли пароль?";
-            forgotPassLinkLabel.LinkClicked += ForgotPassLinkLabel_Click;
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(387, 350);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(98, 15);
+            linkLabel1.TabIndex = 28;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Забыли пароль?";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // LoginForm
             // 
@@ -178,12 +180,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(784, 561);
-            Controls.Add(forgotPassLinkLabel);
-            Controls.Add(escapeButton);
+            Controls.Add(linkLabel1);
+            Controls.Add(label8);
             Controls.Add(ShowPassword);
-            Controls.Add(passwordPic);
-            Controls.Add(loginPic);
-            Controls.Add(backButton);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
+            Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(PasswordField);
             Controls.Add(LoginField);
@@ -194,10 +196,11 @@
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "LoginForm";
+            Load += LoginForm_Load;
             MouseDown += LoginForm_MouseDown;
             MouseMove += LoginForm_MouseMove;
-            ((System.ComponentModel.ISupportInitialize)loginPic).EndInit();
-            ((System.ComponentModel.ISupportInitialize)passwordPic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -210,11 +213,11 @@
         private TextBox LoginField;
         private TextBox PasswordField;
         private Label label3;
-        private Button backButton;
-        private PictureBox loginPic;
-        private PictureBox passwordPic;
+        private Button button1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
         private CheckBox ShowPassword;
-        private Label escapeButton;
-        private LinkLabel forgotPassLinkLabel;
+        private Label label8;
+        private LinkLabel linkLabel1;
     }
 }

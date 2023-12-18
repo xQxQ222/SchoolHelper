@@ -37,21 +37,21 @@
             LoginField = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            RegistrationButton = new Button();
-            ExitButton = new Label();
+            LoginButton = new Button();
+            label8 = new Label();
             pictureBox3 = new PictureBox();
-            nameField = new TextBox();
+            name = new TextBox();
             NameLabel = new Label();
-            surnameField = new TextBox();
+            surname = new TextBox();
             SurnameLabel = new Label();
             birthDate = new DateTimePicker();
             label4 = new Label();
             status = new ComboBox();
             label5 = new Label();
             pictureBox4 = new PictureBox();
-            emailField = new TextBox();
+            emailBox = new TextBox();
             label6 = new Label();
-            patronymicField = new TextBox();
+            textBox1 = new TextBox();
             Otchestvo = new Label();
             button2 = new Button();
             codeField = new TextBox();
@@ -107,7 +107,7 @@
             button1.TabIndex = 16;
             button1.Text = "Назад";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += BackButton_Click;
+            button1.Click += button1_Click;
             // 
             // label3
             // 
@@ -118,6 +118,7 @@
             label3.Size = new Size(403, 81);
             label3.TabIndex = 15;
             label3.Text = "Регистрация";
+            label3.Click += label3_Click;
             // 
             // PasswordField
             // 
@@ -147,6 +148,7 @@
             label2.Size = new Size(75, 24);
             label2.TabIndex = 12;
             label2.Text = "Пароль";
+            label2.Click += label2_Click;
             // 
             // label1
             // 
@@ -157,30 +159,31 @@
             label1.Size = new Size(62, 24);
             label1.TabIndex = 11;
             label1.Text = "Логин";
+            label1.Click += label1_Click;
             // 
-            // RegistrationButton
+            // LoginButton
             // 
-            RegistrationButton.Cursor = Cursors.Hand;
-            RegistrationButton.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            RegistrationButton.Location = new Point(595, 501);
-            RegistrationButton.Name = "RegistrationButton";
-            RegistrationButton.Size = new Size(128, 41);
-            RegistrationButton.TabIndex = 10;
-            RegistrationButton.Text = "Зарег-ся";
-            RegistrationButton.UseVisualStyleBackColor = true;
-            RegistrationButton.Click += RegistrationButton_Click;
+            LoginButton.Cursor = Cursors.Hand;
+            LoginButton.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            LoginButton.Location = new Point(595, 501);
+            LoginButton.Name = "LoginButton";
+            LoginButton.Size = new Size(128, 41);
+            LoginButton.TabIndex = 10;
+            LoginButton.Text = "Зарег-ся";
+            LoginButton.UseVisualStyleBackColor = true;
+            LoginButton.Click += LoginButton_Click;
             // 
-            // ExitButton
+            // label8
             // 
-            ExitButton.AutoSize = true;
-            ExitButton.Cursor = Cursors.Hand;
-            ExitButton.Font = new Font("Arial", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            ExitButton.Location = new Point(767, -1);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(34, 34);
-            ExitButton.TabIndex = 28;
-            ExitButton.Text = "X";
-            ExitButton.Click += EscapeButton_Click;
+            label8.AutoSize = true;
+            label8.Cursor = Cursors.Hand;
+            label8.Font = new Font("Arial", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(767, -1);
+            label8.Name = "label8";
+            label8.Size = new Size(34, 34);
+            label8.TabIndex = 28;
+            label8.Text = "X";
+            label8.Click += label8_Click;
             // 
             // pictureBox3
             // 
@@ -192,14 +195,14 @@
             pictureBox3.TabIndex = 31;
             pictureBox3.TabStop = false;
             // 
-            // nameField
+            // name
             // 
-            nameField.Cursor = Cursors.IBeam;
-            nameField.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            nameField.Location = new Point(507, 198);
-            nameField.Name = "nameField";
-            nameField.Size = new Size(202, 29);
-            nameField.TabIndex = 30;
+            name.Cursor = Cursors.IBeam;
+            name.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            name.Location = new Point(507, 198);
+            name.Name = "name";
+            name.Size = new Size(202, 29);
+            name.TabIndex = 30;
             // 
             // NameLabel
             // 
@@ -210,15 +213,16 @@
             NameLabel.Size = new Size(50, 24);
             NameLabel.TabIndex = 29;
             NameLabel.Text = "Имя";
+            NameLabel.Click += NameLabel_Click;
             // 
-            // surnameField
+            // surname
             // 
-            surnameField.Cursor = Cursors.IBeam;
-            surnameField.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            surnameField.Location = new Point(507, 257);
-            surnameField.Name = "surnameField";
-            surnameField.Size = new Size(202, 29);
-            surnameField.TabIndex = 33;
+            surname.Cursor = Cursors.IBeam;
+            surname.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            surname.Location = new Point(507, 257);
+            surname.Name = "surname";
+            surname.Size = new Size(202, 29);
+            surname.TabIndex = 33;
             // 
             // SurnameLabel
             // 
@@ -229,6 +233,7 @@
             SurnameLabel.Size = new Size(93, 24);
             SurnameLabel.TabIndex = 32;
             SurnameLabel.Text = "Фамилия";
+            SurnameLabel.Click += SurnameLabel_Click;
             // 
             // birthDate
             // 
@@ -246,6 +251,7 @@
             label4.Size = new Size(148, 24);
             label4.TabIndex = 35;
             label4.Text = "Дата Рождения";
+            label4.Click += label4_Click;
             // 
             // status
             // 
@@ -265,6 +271,7 @@
             label5.Size = new Size(68, 24);
             label5.TabIndex = 37;
             label5.Text = "Статус";
+            label5.Click += label5_Click;
             // 
             // pictureBox4
             // 
@@ -276,14 +283,15 @@
             pictureBox4.TabIndex = 40;
             pictureBox4.TabStop = false;
             // 
-            // emailField
+            // emailBox
             // 
-            emailField.Cursor = Cursors.IBeam;
-            emailField.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            emailField.Location = new Point(71, 348);
-            emailField.Name = "emailField";
-            emailField.Size = new Size(202, 29);
-            emailField.TabIndex = 39;
+            emailBox.Cursor = Cursors.IBeam;
+            emailBox.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            emailBox.Location = new Point(71, 348);
+            emailBox.Name = "emailBox";
+            emailBox.Size = new Size(202, 29);
+            emailBox.TabIndex = 39;
+            emailBox.TextChanged += emailBox_TextChanged;
             // 
             // label6
             // 
@@ -294,15 +302,16 @@
             label6.Size = new Size(66, 24);
             label6.TabIndex = 38;
             label6.Text = "E-Mail";
+            label6.Click += label6_Click;
             // 
-            // patronymicField
+            // textBox1
             // 
-            patronymicField.Cursor = Cursors.IBeam;
-            patronymicField.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            patronymicField.Location = new Point(507, 316);
-            patronymicField.Name = "patronymicField";
-            patronymicField.Size = new Size(202, 29);
-            patronymicField.TabIndex = 42;
+            textBox1.Cursor = Cursors.IBeam;
+            textBox1.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox1.Location = new Point(507, 316);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(202, 29);
+            textBox1.TabIndex = 42;
             // 
             // Otchestvo
             // 
@@ -325,7 +334,7 @@
             button2.TabIndex = 43;
             button2.Text = "Подтвердить";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += ConfirmEmailButton_Click;
+            button2.Click += button2_Click;
             // 
             // codeField
             // 
@@ -367,7 +376,7 @@
             ConfirmCodeButton.TabIndex = 49;
             ConfirmCodeButton.Text = "Подтвердить";
             ConfirmCodeButton.UseVisualStyleBackColor = true;
-            ConfirmCodeButton.Click += ConfirmCodeButton_Click;
+            ConfirmCodeButton.Click += button3_Click;
             // 
             // RegistrationForm
             // 
@@ -380,21 +389,21 @@
             Controls.Add(pictureBox5);
             Controls.Add(codeField);
             Controls.Add(button2);
-            Controls.Add(patronymicField);
+            Controls.Add(textBox1);
             Controls.Add(Otchestvo);
             Controls.Add(pictureBox4);
-            Controls.Add(emailField);
+            Controls.Add(emailBox);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(status);
             Controls.Add(label4);
             Controls.Add(birthDate);
-            Controls.Add(surnameField);
+            Controls.Add(surname);
             Controls.Add(SurnameLabel);
             Controls.Add(pictureBox3);
-            Controls.Add(nameField);
+            Controls.Add(name);
             Controls.Add(NameLabel);
-            Controls.Add(ExitButton);
+            Controls.Add(label8);
             Controls.Add(ShowPassword);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -404,12 +413,12 @@
             Controls.Add(LoginField);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(RegistrationButton);
+            Controls.Add(LoginButton);
             FormBorderStyle = FormBorderStyle.None;
             Name = "RegistrationForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Form2";
-            Load += RegistrationForm_Load;
+            Load += Form2_Load;
             MouseDown += RegistrationForm_MouseDown;
             MouseMove += RegistrationForm_MouseMove;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -432,21 +441,21 @@
         private TextBox LoginField;
         private Label label2;
         private Label label1;
-        private Button RegistrationButton;
-        private Label ExitButton;
+        private Button LoginButton;
+        private Label label8;
         private PictureBox pictureBox3;
-        private TextBox nameField;
+        private TextBox name;
         private Label NameLabel;
-        private TextBox surnameField;
+        private TextBox surname;
         private Label SurnameLabel;
         private DateTimePicker birthDate;
         private Label label4;
         private ComboBox status;
         private Label label5;
         private PictureBox pictureBox4;
-        private TextBox emailField;
+        private TextBox emailBox;
         private Label label6;
-        private TextBox patronymicField;
+        private TextBox textBox1;
         private Label Otchestvo;
         private Button button2;
         private TextBox codeField;

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\Новая папка (5)\\WinFormsApp1\\WinFormsApp1.csproj": {}
+    "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\Новая папка (3)\\SchoolHelperApp\\WinFormsApp1\\WinFormsApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\Новая папка (5)\\WinFormsApp1\\WinFormsApp1.csproj": {
+    "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\Новая папка (3)\\SchoolHelperApp\\WinFormsApp1\\WinFormsApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\Новая папка (5)\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectUniqueName": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\Новая папка (3)\\SchoolHelperApp\\WinFormsApp1\\WinFormsApp1.csproj",
         "projectName": "WinFormsApp1",
-        "projectPath": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\Новая папка (5)\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectPath": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\Новая папка (3)\\SchoolHelperApp\\WinFormsApp1\\WinFormsApp1.csproj",
         "packagesPath": "C:\\Users\\nerou\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\Новая папка (5)\\WinFormsApp1\\obj\\",
+        "outputPath": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\Новая папка (3)\\SchoolHelperApp\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

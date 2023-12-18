@@ -13,7 +13,7 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void SendMessageButton_Click(object sender, EventArgs e)//метод, отправляющий сообщение на введенную пользователем электронную почту
+        private void button1_Click(object sender, EventArgs e)
         {
             if (ReadFromDB.CheckIfEmailInBD(emailBox.Text))
             {
@@ -25,7 +25,7 @@ namespace WinFormsApp1
         }
         public int code;
 
-        public int SendMessage(string adressTo)//Метод отправки сообщения с кодом подтверждения
+        public int SendMessage(string adressTo)
         {
             emailBox.Enabled = false;
             try
@@ -57,11 +57,12 @@ namespace WinFormsApp1
 
         }
 
-        private void ButtonNext_Click(object sender, EventArgs e)//Метод, который в случае совпадения кода, введенного пользователем, и кода, высланного на почту, меняет у данного user ячейку с паролем
+        private void button2_Click(object sender, EventArgs e)
         {
             if (int.Parse(CodeBox.Text) == code && code != 0)
             {
                 WriteToDB.ChangePass(emailBox.Text, newPass.Text);
+
                 Thread.Sleep(500);
                 var form = new LoginForm();
                 form.Show();
@@ -71,19 +72,24 @@ namespace WinFormsApp1
                 MessageBox.Show("Неверный код подтверждения");
         }
 
-        private void BackButton_Click(object sender, EventArgs e)//Метод, который при нажатии на кнопку "Назад" перекидывает пользователя на окно "LoginForm"
+        private void button3_Click(object sender, EventArgs e)
         {
             var form = new LoginForm();
             form.Show();
             this.Close();
         }
 
-        private void ShowPassword_CheckedChanged(object sender, EventArgs e)//Метод, который в зависимости от выбора пользователя показывать или не показывать пароль применяет метод UseSystemPasswordChar к PasswordField
+        private void ShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (!ShowPassword.Checked)
                 newPass.UseSystemPasswordChar = true;
             if (ShowPassword.Checked)
                 newPass.UseSystemPasswordChar = false;
+        }
+
+        private void ChangePass_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

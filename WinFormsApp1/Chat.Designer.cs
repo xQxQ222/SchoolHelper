@@ -60,6 +60,7 @@
             label11.Size = new Size(34, 34);
             label11.TabIndex = 29;
             label11.Text = "X";
+            label11.Click += label11_Click;
             // 
             // panel1
             // 
@@ -118,6 +119,7 @@
             Send.TabIndex = 34;
             Send.Text = "Отправить";
             Send.UseVisualStyleBackColor = true;
+            Send.Click += Send_Click;
             // 
             // richTextBox1
             // 
@@ -184,6 +186,7 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(715, 290);
             flowLayoutPanel1.TabIndex = 0;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // panel7
             // 
@@ -200,6 +203,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(302, 23);
             comboBox1.TabIndex = 39;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label5
             // 
@@ -210,6 +214,7 @@
             label5.Size = new Size(312, 37);
             label5.TabIndex = 40;
             label5.Text = "Выберите получателя";
+            label5.Click += label5_Click;
             // 
             // button1
             // 
@@ -221,6 +226,7 @@
             button1.TabIndex = 41;
             button1.Text = "Назад";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Chat
             // 

@@ -123,6 +123,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(540, 48);
             dataGridView1.TabIndex = 9;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
@@ -171,6 +172,7 @@
             button1.TabIndex = 10;
             button1.Text = "Вернуться";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label8
             // 
@@ -182,6 +184,7 @@
             label8.Size = new Size(34, 34);
             label8.TabIndex = 29;
             label8.Text = "X";
+            label8.Click += label8_Click;
             // 
             // Search
             // 
@@ -240,6 +243,9 @@
             Name = "Table";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Table";
+            Load += Table_Load;
+            MouseDown += Table_MouseDown;
+            MouseMove += Table_MouseMove;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

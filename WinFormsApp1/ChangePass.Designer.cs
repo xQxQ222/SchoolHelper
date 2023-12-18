@@ -126,7 +126,7 @@
             button1.TabIndex = 48;
             button1.Text = "Отправить код";
             button1.UseVisualStyleBackColor = true;
-            button1.Click +=SendMessageButton_Click;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -138,7 +138,7 @@
             button2.TabIndex = 49;
             button2.Text = "Далее";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += ButtonNext_Click;
+            button2.Click += button2_Click;
             // 
             // pictureBox2
             // 
@@ -181,7 +181,7 @@
             button3.TabIndex = 53;
             button3.Text = "Назад";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += BackButton_Click;
+            button3.Click += button3_Click;
             // 
             // ShowPassword
             // 
@@ -219,6 +219,7 @@
             Name = "ChangePass";
             StartPosition = FormStartPosition.CenterParent;
             Text = "ChangePass";
+            Load += ChangePass_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

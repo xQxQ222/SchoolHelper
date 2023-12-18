@@ -8,9 +8,9 @@ using System.Data;
 
 namespace WinFormsApp1
 {
-    class WriteToDB//класс, где хранятся методы, которые заносят новую информацию или изменяют текущую в БД
+    internal class WriteToDB
     {
-        public static bool RegisterANewUser(User userToReg)//Заносит зарегистрировавшегося пользователя в БД и возвращает булевое значение, true - если регистрация прошла успешно и false - если нет
+        public static bool RegisterANewUser(User userToReg) 
         {
             bool userSuccessfullyregistered;
 
@@ -37,7 +37,7 @@ namespace WinFormsApp1
             return userSuccessfullyregistered;
         }
 
-        public static void ChangePass(string email, string newPass)//Метод, который изменяет пароль у конкретного пользователя через класс ChangePass
+        public static void ChangePass(string email, string newPass)
         {
             DB db = new DB();
             DataTable dt = new DataTable();
@@ -50,7 +50,7 @@ namespace WinFormsApp1
             db.closeConnection();
         }
 
-        public static void AddNewMessage(Tuple<List<string>, Dictionary<string, string>> recip, string comboBox1, string richTextBox1)//Добавляет новую новость новость в базу данных
+        public static void AddNewMessage(Tuple<List<string>, Dictionary<string, string>> recip, string comboBox1, string richTextBox1)
         {
             DB dB = new DB();
             MySqlCommand cmd = new MySqlCommand("INSERT INTO `messages` (`sender`, `recipient`, `message`, `messageDate`) VALUES (@sender, @recipient, @message, @messageDate)", dB.getConnection());

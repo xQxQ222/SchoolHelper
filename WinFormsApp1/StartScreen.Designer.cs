@@ -28,41 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            RegistrationButton = new Button();
-            LoginButton = new Button();
+            Registration = new Button();
+            Login = new Button();
             label1 = new Label();
             label8 = new Label();
             SuspendLayout();
             // 
-            // RegistrationButton
+            // Registration
             // 
-            RegistrationButton.AutoSize = true;
-            RegistrationButton.Cursor = Cursors.Hand;
-            RegistrationButton.FlatAppearance.BorderSize = 2;
-            RegistrationButton.FlatStyle = FlatStyle.Flat;
-            RegistrationButton.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            RegistrationButton.Location = new Point(294, 316);
-            RegistrationButton.Name = "RegistrationButton";
-            RegistrationButton.Size = new Size(181, 58);
-            RegistrationButton.TabIndex = 0;
-            RegistrationButton.Text = "Регистрация";
-            RegistrationButton.UseVisualStyleBackColor = true;
-            RegistrationButton.Click += RegistrationButton_Click;
+            Registration.AutoSize = true;
+            Registration.Cursor = Cursors.Hand;
+            Registration.FlatAppearance.BorderSize = 2;
+            Registration.FlatStyle = FlatStyle.Flat;
+            Registration.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            Registration.Location = new Point(294, 316);
+            Registration.Name = "Registration";
+            Registration.Size = new Size(181, 58);
+            Registration.TabIndex = 0;
+            Registration.Text = "Регистрация";
+            Registration.UseVisualStyleBackColor = true;
+            Registration.Click += button1_Click;
             // 
-            // LoginButton
+            // Login
             // 
-            LoginButton.AutoSize = true;
-            LoginButton.Cursor = Cursors.Hand;
-            LoginButton.FlatAppearance.BorderSize = 2;
-            LoginButton.FlatStyle = FlatStyle.Flat;
-            LoginButton.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LoginButton.Location = new Point(294, 203);
-            LoginButton.Name = "LoginButton";
-            LoginButton.Size = new Size(181, 58);
-            LoginButton.TabIndex = 1;
-            LoginButton.Text = "Вход";
-            LoginButton.UseVisualStyleBackColor = true;
-            LoginButton.Click += LoginButton_Click;
+            Login.AutoSize = true;
+            Login.Cursor = Cursors.Hand;
+            Login.FlatAppearance.BorderSize = 2;
+            Login.FlatStyle = FlatStyle.Flat;
+            Login.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            Login.Location = new Point(294, 203);
+            Login.Name = "Login";
+            Login.Size = new Size(181, 58);
+            Login.TabIndex = 1;
+            Login.Text = "Вход";
+            Login.UseVisualStyleBackColor = true;
+            Login.Click += button2_Click;
             // 
             // label1
             // 
@@ -73,6 +73,7 @@
             label1.Size = new Size(446, 61);
             label1.TabIndex = 2;
             label1.Text = "Добро пожаловать!";
+            label1.Click += label1_Click;
             // 
             // label8
             // 
@@ -84,7 +85,7 @@
             label8.Size = new Size(34, 34);
             label8.TabIndex = 27;
             label8.Text = "X";
-            label8.Click += ExitButton_Click;
+            label8.Click += label8_Click;
             // 
             // StartScreen
             // 
@@ -95,22 +96,24 @@
             ClientSize = new Size(784, 561);
             Controls.Add(label8);
             Controls.Add(label1);
-            Controls.Add(LoginButton);
-            Controls.Add(RegistrationButton);
+            Controls.Add(Login);
+            Controls.Add(Registration);
             FormBorderStyle = FormBorderStyle.None;
             Name = "StartScreen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += StartScreen_Load;
             MouseDown += StartScreen_MouseDown;
             MouseMove += StartScreen_MouseMove;
+            Resize += StartScreen_Resize;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button RegistrationButton;
-        private Button LoginButton;
+        private Button Registration;
+        private Button Login;
         private Label label1;
         private Label label8;
     }

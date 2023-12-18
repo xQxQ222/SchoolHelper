@@ -14,7 +14,7 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void RegistrationForm_Load(object sender, EventArgs e)//Метод, вызываемый при загрузке формы. Заполняет выбор статуса заранее определенными константами
+        private void Form2_Load(object sender, EventArgs e)
         {
             List<string> list = new List<string>
             {
@@ -33,7 +33,7 @@ namespace WinFormsApp1
             ConfirmCodeButton.Enabled = false;
         }
 
-        private void ShowPassword_CheckedChanged(object sender, EventArgs e)//Метод, который в зависимости от выбора пользователя показывать или не показывать пароль применяет метод UseSystemPasswordChar к PasswordField
+        private void ShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (ShowPassword.Checked == true)
                 PasswordField.UseSystemPasswordChar = false;
@@ -41,25 +41,25 @@ namespace WinFormsApp1
                 PasswordField.UseSystemPasswordChar = true;
         }
 
-        private void BackButton_Click(object sender, EventArgs e)//Метод, который при нажатии на кнопку "Назад" перекидывает пользователя на окно "StartScreen"
+        private void button1_Click(object sender, EventArgs e)
         {
             var form = new StartScreen();
             form.Show();
             this.Close();
         }
 
-        private void EscapeButton_Click(object sender, EventArgs e)//Метод кнопки закрытия приложения
+        private void label8_Click(object sender, EventArgs e)
         {
             Application.Exit();
 
         }
-        Point lastPoint;//Переменная, в которой хранится последняя точка расположения окна на экране пользователя
-        private void RegistrationForm_MouseDown(object sender, MouseEventArgs e)//Метод, срабатывающий после того, как пользователь перестанет удерживать левую кнопку мыши. Изменяет значение переменной lastPoint
+        Point lastPoint;
+        private void RegistrationForm_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
         }
 
-        private void RegistrationForm_MouseMove(object sender, MouseEventArgs e)//Метод, позволяющий перемещать данное окно "StartScreen" на экране пользователя, путем зажатия левой кнопки мыши
+        private void RegistrationForm_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -68,10 +68,10 @@ namespace WinFormsApp1
             }
         }
 
-        private void RegistrationButton_Click(object sender, EventArgs e)//Метод, при нажатии на кнопку "Регистрация", который проверяет базу данных на наличие пользователя с таким же логином или почтой, создает новый объект класса User, записывает нового пользователя в базу данных
+        private void LoginButton_Click(object sender, EventArgs e)
         {
             //if (checkUser() || checkEmail())
-            if (ReadFromDB.CheckIfNameOfUserInBD(LoginField.Text) || ReadFromDB.CheckIfEmailInBD(emailField.Text))
+            if (ReadFromDB.CheckIfNameOfUserInBD(LoginField.Text) || ReadFromDB.CheckIfEmailInBD(emailBox.Text))
             {
                 MessageBox.Show("Пользователь с таким логином или E-mail уже существует");
                 return;
@@ -101,18 +101,9 @@ namespace WinFormsApp1
             //db.closeConnection();
             #endregion 
 
-            User newUser = new User()
-            {
-                _login = LoginField.Text,
-                _password = PasswordField.Text,
-                _name = nameField.Text,
-                _surename = surnameField.Text,
-                _patronymic = Otchestvo.Text,
-                _Date = birthDate.Value,
-                _status = status.Text,
-                _email = emailField.Text
-            };
-
+            User newUser = new User() {_login = LoginField.Text, _password = PasswordField.Text,_name = name.Text, _surename = surname.Text,
+                _patronymic = Otchestvo.Text, _Date = birthDate.Value, _status = status.Text, _email = emailBox.Text};
+                    
             var userSuccessfullyRegistered = WriteToDB.RegisterANewUser(newUser); // логически странно
 
             if (userSuccessfullyRegistered)
@@ -128,7 +119,7 @@ namespace WinFormsApp1
             form.Show();
             this.Close();
         }
-        #region
+
         //public bool checkUser()
         //{
         //    DB db = new DB();
@@ -171,15 +162,53 @@ namespace WinFormsApp1
         //    else
         //        return false;
         //}
-        #endregion
-        private void status_SelectedIndexChanged(object sender, EventArgs e)//Метод, позволяющий выбрать статус из ранее представленных
+
+        private void status_SelectedIndexChanged(object sender, EventArgs e)
         {
             string stat = status.SelectedItem.ToString();
         }
 
-        private void ConfirmEmailButton_Click(object sender, EventArgs e)//Метод, 
+        private void NameLabel_Click(object sender, EventArgs e)
         {
-            emailField.Enabled = false;
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void SurnameLabel_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void emailBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            emailBox.Enabled = false;
             codeField.Enabled = true;
             codeField.Visible = true;
             label7.Visible = true;
@@ -188,14 +217,12 @@ namespace WinFormsApp1
             ConfirmCodeButton.Enabled = true;
             button2.Visible = false;
             button2.Enabled = false;
-            int code = SendMessage(emailField.Text);
+            int code = SendMessage(emailBox.Text);
             _code = code;
         }
-
         int _code;
-
         bool isCorrectCode = false;
-        private void ConfirmCodeButton_Click(object sender, EventArgs e)//Метод, который проверяет условие правильности введенного с почты кода подтверждения
+        private void button3_Click(object sender, EventArgs e)
         {
             if (isCorrectEmailCode(_code))
             {
@@ -212,7 +239,7 @@ namespace WinFormsApp1
                 MessageBox.Show("Неверный код подтверждения");
             }
         }
-        public bool isCorrectEmailCode(int code)//Проверяет правильность кода с почты
+        public bool isCorrectEmailCode(int code)
         {
             if (codeField.Text == code.ToString() && codeField.Text != "0")
             {
@@ -220,9 +247,9 @@ namespace WinFormsApp1
             }
             return false;
         }
-        public int SendMessage(string adressTo)//метод для отправки письма на почту пользователю с кодом подтверждения
+        public int SendMessage(string adressTo)
         {
-            emailField.Enabled = false;
+            emailBox.Enabled = false;
             try
             {
                 string from = @"schoolhelper634@gmail.com"; // адреса отправителя
