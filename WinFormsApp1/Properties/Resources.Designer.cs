@@ -253,9 +253,9 @@ namespace WinFormsApp1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ava_steam_anime_tyan_17 {
+        internal static System.Drawing.Bitmap Confirm {
             get {
-                object obj = ResourceManager.GetObject("ava-steam-anime-tyan-17", resourceCulture);
+                object obj = ResourceManager.GetObject("Confirm", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,40 +263,9 @@ namespace WinFormsApp1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap avatars_viber_pixelbox_ru_70 {
+        internal static System.Drawing.Bitmap Decline {
             get {
-                object obj = ResourceManager.GetObject("avatars-viber-pixelbox.ru-70", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap dMehBsn83aSAsYMFKN3A9uobgguU_H7qkQ4hQKJoQVpwsC5m9DYb2NMMCyT3ORSaBARFfJ4G79fyOevlUFHLjiMs {
-            get {
-                object obj = ResourceManager.GetObject("dMehBsn83aSAsYMFKN3A9uobgguU-H7qkQ4hQKJoQVpwsC5m9DYb2NMMCyT3ORSaBARFfJ4G79fyOevlU" +
-                        "FHLjiMs", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap image_562610131056464036330 {
-            get {
-                object obj = ResourceManager.GetObject("image_562610131056464036330", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap maxresdefault {
-            get {
-                object obj = ResourceManager.GetObject("maxresdefault", resourceCulture);
+                object obj = ResourceManager.GetObject("Decline", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -308,16 +277,6 @@ namespace WinFormsApp1.Properties {
             get {
                 object obj = ResourceManager.GetObject("png-transparent-name-tag-computer-icons-logo-id-card-miscellaneous-text-silhouett" +
                         "e", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UGelN_P7RUg {
-            get {
-                object obj = ResourceManager.GetObject("UGelN_P7RUg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

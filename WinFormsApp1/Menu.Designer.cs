@@ -87,6 +87,12 @@
             profileButton = new Button();
             button5 = new Button();
             panel2 = new Panel();
+            label15 = new Label();
+            label14 = new Label();
+            label5 = new Label();
+            HighSchoolPEIcon = new PictureBox();
+            MiddleSchoolPEIcon = new PictureBox();
+            PrimarySchoolPEIcon = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             panel9.SuspendLayout();
@@ -117,6 +123,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)HighSchoolPEIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MiddleSchoolPEIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PrimarySchoolPEIcon).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -180,7 +189,7 @@
             button4.TabIndex = 11;
             button4.Text = "Подтвердить аккаунты";
             button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            button4.Click += VerifyUsersButton_Click;
             // 
             // panel8
             // 
@@ -201,7 +210,6 @@
             label12.Size = new Size(157, 61);
             label12.TabIndex = 3;
             label12.Text = "Меню";
-            label12.Click += label12_Click;
             // 
             // panel5
             // 
@@ -238,7 +246,6 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 9;
             pictureBox5.TabStop = false;
-            pictureBox5.Click += pictureBox5_Click;
             // 
             // pictureBox4
             // 
@@ -275,7 +282,7 @@
             button3.TabIndex = 6;
             button3.Text = "Почта";
             button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            button3.Click += ChatButton_Click;
             // 
             // button2
             // 
@@ -290,7 +297,7 @@
             button2.TabIndex = 5;
             button2.Text = "Журнал";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            button2.Click += JournalButton_Click;
             // 
             // button1
             // 
@@ -304,7 +311,7 @@
             button1.TabIndex = 4;
             button1.Text = "Расписание";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += TableButton_Click;
             // 
             // label11
             // 
@@ -346,7 +353,6 @@
             richTextBox1.Size = new Size(438, 378);
             richTextBox1.TabIndex = 1;
             richTextBox1.Text = "";
-            richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
             // pictureBox6
             // 
@@ -355,7 +361,6 @@
             pictureBox6.Size = new Size(239, 227);
             pictureBox6.TabIndex = 0;
             pictureBox6.TabStop = false;
-            pictureBox6.Click += pictureBox6_Click;
             // 
             // groupBox4
             // 
@@ -494,7 +499,7 @@
             // 
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources._2d4d8dc558aeda96eea6b9fb4e682a4c;
-            pictureBox1.Location = new Point(134, 133);
+            pictureBox1.Location = new Point(126, 133);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(200, 200);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -505,29 +510,27 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(187, 347);
+            label1.Location = new Point(165, 347);
             label1.Name = "label1";
             label1.Size = new Size(104, 34);
             label1.TabIndex = 3;
             label1.Text = "Погода";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(165, 96);
+            label2.Location = new Point(150, 96);
             label2.Name = "label2";
             label2.Size = new Size(126, 34);
             label2.TabIndex = 4;
             label2.Text = "Мем дня";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(134, 624);
+            label3.Location = new Point(107, 624);
             label3.Name = "label3";
             label3.Size = new Size(234, 34);
             label3.TabIndex = 5;
@@ -551,7 +554,6 @@
             groupBox1.Size = new Size(374, 226);
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
-            groupBox1.Enter += groupBox1_Enter;
             // 
             // pictureBox14
             // 
@@ -582,7 +584,6 @@
             pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox12.TabIndex = 10;
             pictureBox12.TabStop = false;
-            pictureBox12.Click += pictureBox12_Click;
             // 
             // label10
             // 
@@ -633,7 +634,6 @@
             label6.Size = new Size(95, 34);
             label6.TabIndex = 5;
             label6.Text = "label6";
-            label6.Click += label6_Click;
             // 
             // label4
             // 
@@ -672,7 +672,7 @@
             label13.Size = new Size(34, 34);
             label13.TabIndex = 29;
             label13.Text = "X";
-            label13.Click += label13_Click;
+            label13.Click += ExitButton_Click;
             // 
             // panel7
             // 
@@ -692,9 +692,7 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 31;
             pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
-            pictureBox3.MouseEnter += pictureBox3_MouseEnter;
-            pictureBox3.MouseLeave += pictureBox3_MouseLeave;
+            pictureBox3.Click += ShowAdditionalButtons_Click;
             // 
             // exitButton
             // 
@@ -708,7 +706,7 @@
             exitButton.TabIndex = 33;
             exitButton.Text = "Выйти";
             exitButton.UseVisualStyleBackColor = false;
-            exitButton.Click += exitButton_Click;
+            exitButton.Click += LogoutButton_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -733,8 +731,6 @@
             profileButton.Text = "Профиль";
             profileButton.UseVisualStyleBackColor = false;
             profileButton.Click += profileButton_Click;
-            profileButton.MouseEnter += profileButton_MouseEnter;
-            profileButton.MouseLeave += profileButton_MouseLeave;
             // 
             // button5
             // 
@@ -753,6 +749,12 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(227, 244, 244);
+            panel2.Controls.Add(label15);
+            panel2.Controls.Add(label14);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(HighSchoolPEIcon);
+            panel2.Controls.Add(MiddleSchoolPEIcon);
+            panel2.Controls.Add(PrimarySchoolPEIcon);
             panel2.Controls.Add(flowLayoutPanel1);
             panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(panel7);
@@ -767,7 +769,63 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(480, 1000);
             panel2.TabIndex = 1;
-            panel2.Paint += panel2_Paint;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.Location = new Point(63, 828);
+            label15.Name = "label15";
+            label15.Size = new Size(93, 21);
+            label15.TabIndex = 40;
+            label15.Text = "9-11 класс";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Location = new Point(258, 686);
+            label14.Name = "label14";
+            label14.Size = new Size(83, 21);
+            label14.TabIndex = 39;
+            label14.Text = "5-8 класс";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(63, 686);
+            label5.Name = "label5";
+            label5.Size = new Size(83, 21);
+            label5.TabIndex = 38;
+            label5.Text = "1-4 класс";
+            // 
+            // HighSchoolPEIcon
+            // 
+            HighSchoolPEIcon.Location = new Point(71, 861);
+            HighSchoolPEIcon.Name = "HighSchoolPEIcon";
+            HighSchoolPEIcon.Size = new Size(70, 70);
+            HighSchoolPEIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            HighSchoolPEIcon.TabIndex = 37;
+            HighSchoolPEIcon.TabStop = false;
+            // 
+            // MiddleSchoolPEIcon
+            // 
+            MiddleSchoolPEIcon.Location = new Point(264, 717);
+            MiddleSchoolPEIcon.Name = "MiddleSchoolPEIcon";
+            MiddleSchoolPEIcon.Size = new Size(70, 70);
+            MiddleSchoolPEIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            MiddleSchoolPEIcon.TabIndex = 36;
+            MiddleSchoolPEIcon.TabStop = false;
+            // 
+            // PrimarySchoolPEIcon
+            // 
+            PrimarySchoolPEIcon.Location = new Point(71, 717);
+            PrimarySchoolPEIcon.Name = "PrimarySchoolPEIcon";
+            PrimarySchoolPEIcon.Size = new Size(70, 70);
+            PrimarySchoolPEIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            PrimarySchoolPEIcon.TabIndex = 35;
+            PrimarySchoolPEIcon.TabStop = false;
             // 
             // Menu
             // 
@@ -827,6 +885,9 @@
             flowLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)HighSchoolPEIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MiddleSchoolPEIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PrimarySchoolPEIcon).EndInit();
             ResumeLayout(false);
         }
 
@@ -892,5 +953,11 @@
         private Button profileButton;
         private Button button5;
         private Panel panel2;
+        private Label label5;
+        private PictureBox HighSchoolPEIcon;
+        private PictureBox MiddleSchoolPEIcon;
+        private PictureBox PrimarySchoolPEIcon;
+        private Label label15;
+        private Label label14;
     }
 }

@@ -1,12 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System.Net;
+using WinFormsApp1.Properties;
 
 namespace WinFormsApp1
 {
     public partial class Menu : Form
     {
-        static bool isOnProfileButton;
-        static bool isOnExitButton;
         public Menu()
         {
             InitializeComponent();
@@ -80,10 +79,76 @@ namespace WinFormsApp1
             label10.Text = sides[degr];
             label7.Text = oW.main.humidity.ToString() + "%";
             label8.Text = ((int)oW.main.pressure).ToString() + "мм.рт.с.";
+            isPEOutside(oW.main.temp, oW.wind.speed);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void isPEOutside(double temp, double windSpeed)
         {
+
+            PrimarySchoolPEIcon.Image = Resources.Decline;
+            MiddleSchoolPEIcon.Image = Resources.Decline;
+            HighSchoolPEIcon.Image = Resources.Decline;
+            var winter = new int[] { 12, 1, 2 };
+            if (winter.Contains(DateTime.Now.Month))
+            {
+                if (windSpeed == 0)
+                {
+                    if (temp > -10)
+                    {
+                        PrimarySchoolPEIcon.Image = Resources.Confirm;
+                        MiddleSchoolPEIcon.Image = Resources.Confirm;
+                        HighSchoolPEIcon.Image = Resources.Confirm;
+                    }
+                    else if (temp > -14)
+                    {
+                        MiddleSchoolPEIcon.Image = Resources.Confirm;
+                        HighSchoolPEIcon.Image = Resources.Confirm;
+                    }
+                    else if (temp > -16)
+                        HighSchoolPEIcon.Image = Resources.Confirm;
+                }
+                else if (windSpeed <= 5 && windSpeed>0)
+                {
+                    if (temp > -6)
+                    {
+                        PrimarySchoolPEIcon.Image = Resources.Confirm;
+                        MiddleSchoolPEIcon.Image = Resources.Confirm;
+                        HighSchoolPEIcon.Image = Resources.Confirm;
+                    }
+                    else if (temp > -10)
+                    {
+                        MiddleSchoolPEIcon.Image = Resources.Confirm;
+                        HighSchoolPEIcon.Image = Resources.Confirm;
+                    }
+                    else if (temp > -15)
+                        HighSchoolPEIcon.Image = Resources.Confirm;
+                }
+                else if (windSpeed <= 10&& windSpeed>5)
+                {
+                    if (temp > -3)
+                    {
+                        PrimarySchoolPEIcon.Image = Resources.Confirm;
+                        MiddleSchoolPEIcon.Image = Resources.Confirm;
+                        HighSchoolPEIcon.Image = Resources.Confirm;
+                    }
+                    else if (temp > -6)
+                    {
+                        MiddleSchoolPEIcon.Image = Resources.Confirm;
+                        HighSchoolPEIcon.Image = Resources.Confirm;
+                    }
+                    else if (temp > -10)
+                        HighSchoolPEIcon.Image = Resources.Confirm;
+                }
+            }
+            else
+            {
+                if (temp > 14)
+                {
+                    PrimarySchoolPEIcon.Image = Resources.Confirm;
+                    MiddleSchoolPEIcon.Image = Resources.Confirm;
+                    HighSchoolPEIcon.Image = Resources.Confirm;
+                }
+            }
 
         }
         Point lastPoint;
@@ -101,83 +166,37 @@ namespace WinFormsApp1
             }
         }
 
-        private void label13_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void TableButton_Click(object sender, EventArgs e)
         {
             var form = new Table();
             form.Show();
             this.Close();
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void JournalButton_Click(object sender, EventArgs e)
         {
             var form = new Journal();
             form.Show();
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void ChatButton_Click(object sender, EventArgs e)
         {
             var form = new Chat();
             form.Show();
             this.Close();
         }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void VerifyUsersButton_Click(object sender, EventArgs e)
         {
             var form = new VerifyUsers();
             form.Show();
             this.Close();
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void pictureBox3_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-
-
         }
 
         private void profileButton_Click(object sender, EventArgs e)
@@ -187,7 +206,7 @@ namespace WinFormsApp1
             this.Close();
         }
         private bool isShow = false;
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void ShowAdditionalButtons_Click(object sender, EventArgs e)
         {
             if (isShow)
                 isShow = false;
@@ -195,41 +214,16 @@ namespace WinFormsApp1
             flowLayoutPanel1.Visible = isShow;
         }
 
-        private void profileButton_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void profileButton_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox7_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void exitButton_Click(object sender, EventArgs e)
+        private void LogoutButton_Click(object sender, EventArgs e)
         {
             var form = new StartScreen();
             form.Show();
             this.Close();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void pictureBox10_Click(object sender, EventArgs e)
         {
-            var form=new CreateNews();
+            var form = new CreateNews();
             form.Show();
             this.Close();
         }
