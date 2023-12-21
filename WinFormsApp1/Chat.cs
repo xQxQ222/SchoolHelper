@@ -10,39 +10,49 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void BackButton_Click(object sender, EventArgs e)
         {
             var form = new Menu();
             form.Show();
             this.Close();
         }
 
-        private void label11_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Chat_Load(object sender, EventArgs e)
         {
             var recip = ReadFromDB.GetRecipients();
             comboBox1.DataSource = recip.Item1;
+            UpdateChat();
         }
-
-        private void label5_Click(object sender, EventArgs e)
+        public void UpdateChat()
         {
-
+            listView1.Items.Clear();
+            listView2.Items.Clear();
+            var dict = ReadFromDB.GetMessages();
+            var dict2 = ReadFromDB.GetMessagesSends();
+            var i = 0;
+            var k = 0;
+            foreach (var messages in dict)
+            {
+                i++;
+                ListViewItem item = new ListViewItem(i.ToString());
+                item.SubItems.Add(messages.Value.Item1);
+                item.SubItems.Add(messages.Value.Item2);
+                listView1.Items.Add(item);
+            }
+            foreach (var messages in dict2)
+            {
+                k++;
+                ListViewItem item = new ListViewItem(k.ToString());
+                item.SubItems.Add(messages.Value.Item1);
+                item.SubItems.Add(messages.Value.Item2);
+                listView2.Items.Add(item);
+            }
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Send_Click(object sender, EventArgs e)
         {
             var recip = ReadFromDB.GetRecipients();
@@ -51,20 +61,7 @@ namespace WinFormsApp1
 
             MessageBox.Show("Сообщение успешно отправлено");
             richTextBox1.Clear();
-        }
-
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var form = new Menu();
-            form.Show();
-            this.Close();
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            UpdateChat();
         }
     }
 }

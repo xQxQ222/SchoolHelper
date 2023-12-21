@@ -84,7 +84,6 @@
             LoginField.Name = "LoginField";
             LoginField.Size = new Size(202, 29);
             LoginField.TabIndex = 3;
-            LoginField.TextChanged += textBox1_TextChanged;
             // 
             // PasswordField
             // 
@@ -95,7 +94,6 @@
             PasswordField.Size = new Size(202, 29);
             PasswordField.TabIndex = 4;
             PasswordField.UseSystemPasswordChar = true;
-            PasswordField.TextChanged += PasswordField_TextChanged;
             // 
             // label3
             // 
@@ -196,7 +194,6 @@
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "LoginForm";
-            Load += LoginForm_Load;
             MouseDown += LoginForm_MouseDown;
             MouseMove += LoginForm_MouseMove;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -40,14 +40,18 @@
             label3 = new Label();
             panel5 = new Panel();
             label4 = new Label();
-            panel6 = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            panel7 = new Panel();
             comboBox1 = new ComboBox();
             label5 = new Label();
             button1 = new Button();
+            listView1 = new ListView();
+            id = new ColumnHeader();
+            Sender = new ColumnHeader();
+            MessageText = new ColumnHeader();
+            listView2 = new ListView();
+            id2 = new ColumnHeader();
+            Reciever = new ColumnHeader();
+            TextOfMessage = new ColumnHeader();
             panel4.SuspendLayout();
-            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // label11
@@ -60,7 +64,7 @@
             label11.Size = new Size(34, 34);
             label11.TabIndex = 29;
             label11.Text = "X";
-            label11.Click += label11_Click;
+            label11.Click += ExitButton_Click;
             // 
             // panel1
             // 
@@ -170,32 +174,6 @@
             label4.TabIndex = 36;
             label4.Text = "Отправленные сообщения";
             // 
-            // panel6
-            // 
-            panel6.BackColor = Color.White;
-            panel6.Controls.Add(flowLayoutPanel1);
-            panel6.Location = new Point(12, 149);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(715, 290);
-            panel6.TabIndex = 37;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(715, 290);
-            flowLayoutPanel1.TabIndex = 0;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
-            // 
-            // panel7
-            // 
-            panel7.BackColor = Color.White;
-            panel7.Location = new Point(12, 538);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(715, 290);
-            panel7.TabIndex = 38;
-            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
@@ -203,7 +181,6 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(302, 23);
             comboBox1.TabIndex = 39;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label5
             // 
@@ -214,7 +191,6 @@
             label5.Size = new Size(312, 37);
             label5.TabIndex = 40;
             label5.Text = "Выберите получателя";
-            label5.Click += label5_Click;
             // 
             // button1
             // 
@@ -226,7 +202,60 @@
             button1.TabIndex = 41;
             button1.Text = "Назад";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += BackButton_Click;
+            // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { id, Sender, MessageText });
+            listView1.Location = new Point(12, 149);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(715, 288);
+            listView1.TabIndex = 42;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // id
+            // 
+            id.Text = "id";
+            id.Width = 40;
+            // 
+            // Sender
+            // 
+            Sender.Text = "Отправитель";
+            Sender.TextAlign = HorizontalAlignment.Center;
+            Sender.Width = 150;
+            // 
+            // MessageText
+            // 
+            MessageText.Text = "Текст сообщения";
+            MessageText.TextAlign = HorizontalAlignment.Center;
+            MessageText.Width = 530;
+            // 
+            // listView2
+            // 
+            listView2.Columns.AddRange(new ColumnHeader[] { id2, Reciever, TextOfMessage });
+            listView2.Location = new Point(12, 522);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(715, 288);
+            listView2.TabIndex = 43;
+            listView2.UseCompatibleStateImageBehavior = false;
+            listView2.View = View.Details;
+            // 
+            // id2
+            // 
+            id2.Text = "id";
+            // 
+            // Reciever
+            // 
+            Reciever.Text = "Получатель";
+            Reciever.TextAlign = HorizontalAlignment.Center;
+            Reciever.Width = 150;
+            // 
+            // TextOfMessage
+            // 
+            TextOfMessage.Text = "Текст сообщения";
+            TextOfMessage.TextAlign = HorizontalAlignment.Center;
+            TextOfMessage.Width = 530;
             // 
             // Chat
             // 
@@ -234,11 +263,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(1500, 1000);
+            Controls.Add(listView2);
+            Controls.Add(listView1);
             Controls.Add(button1);
             Controls.Add(label5);
             Controls.Add(comboBox1);
-            Controls.Add(panel7);
-            Controls.Add(panel6);
             Controls.Add(label4);
             Controls.Add(panel5);
             Controls.Add(label3);
@@ -254,7 +283,6 @@
             Load += Chat_Load;
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            panel6.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -272,11 +300,16 @@
         private Label label3;
         private Panel panel5;
         private Label label4;
-        private Panel panel6;
-        private Panel panel7;
         private ComboBox comboBox1;
         private Label label5;
         private Button button1;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private ListView listView1;
+        private ListView listView2;
+        private ColumnHeader id;
+        private ColumnHeader Sender;
+        private ColumnHeader MessageText;
+        private ColumnHeader id2;
+        private ColumnHeader Reciever;
+        private ColumnHeader TextOfMessage;
     }
 }

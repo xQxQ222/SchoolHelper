@@ -107,9 +107,10 @@ namespace WinFormsApp1
                 command = new MySqlCommand("SELECT * FROM `users` WHERE `status` LIKE 'Учитель'", db.getConnection());
             else if (User.Current._status == "Учитель")
                 command = new MySqlCommand("SELECT * FROM `users` WHERE 'status' LIKE 'Учитель' OR 'Ученик'", db.getConnection());
-            else
+            else if (User.Current._status == "Администратор")
             {
-                command = new MySqlCommand("SELECT * FROM `users`", db.getConnection());
+                command = new MySqlCommand("SELECT * FROM `users` WHERE `id` != @id", db.getConnection());
+                command.Parameters.Add("@id",MySqlDbType.Int64).Value=User.Current._id;
             }
             adapter.SelectCommand = command;
             adapter.Fill(dt);
@@ -117,9 +118,10 @@ namespace WinFormsApp1
             list.Add("");
             if (dt.Rows.Count > 0)
             {
+                var read = command.ExecuteReader();
                 foreach (DataRow row in dt.Rows)
                 {
-                    var read = command.ExecuteReader();
+                    
                     read.Read();
                     var login = read.GetString(1);
                     var name = read.GetString(3);
@@ -135,6 +137,57 @@ namespace WinFormsApp1
             var tuple = new Tuple<List<string>, Dictionary<string, string>>(list, dic);
             return tuple;
         }
-
+        public static Dictionary<int,Tuple<string,string>> GetMessages()
+        {
+            var dict=new Dictionary<int,Tuple<string,string>>();
+            DB db = new DB();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            var command = new MySqlCommand("SELECT * FROM `messages` WHERE `recipient` LIKE @recipient", db.getConnection());
+            command.Parameters.Add("@recipient", MySqlDbType.VarChar).Value = User.Current._login;
+            adapter.SelectCommand = command;
+            adapter.Fill(dt);
+            db.openConnection();
+            if(dt.Rows.Count > 0)
+            {
+                var read = command.ExecuteReader();
+                foreach (DataRow row in dt.Rows)
+                {
+                    read.Read();
+                    var id=read.GetInt32(0);
+                    var sender=read.GetString(1);
+                    var text=read.GetString(3);
+                    var tuple=new Tuple<string,string>(sender, text);
+                    dict.Add(id, tuple);
+                }
+            }
+            return dict;
+        }
+        public static Dictionary<int, Tuple<string, string>> GetMessagesSends()
+        {
+            var dict = new Dictionary<int, Tuple<string, string>>();
+            DB db = new DB();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            var command = new MySqlCommand("SELECT * FROM `messages` WHERE `sender` LIKE @sender", db.getConnection());
+            command.Parameters.Add("@sender", MySqlDbType.VarChar).Value = User.Current._login;
+            adapter.SelectCommand = command;
+            adapter.Fill(dt);
+            db.openConnection();
+            if (dt.Rows.Count > 0)
+            {
+                var read = command.ExecuteReader();
+                foreach (DataRow row in dt.Rows)
+                {
+                    read.Read();
+                    var id = read.GetInt32(0);
+                    var sender = read.GetString(1);
+                    var text = read.GetString(3);
+                    var tuple = new Tuple<string, string>(sender, text);
+                    dict.Add(id, tuple);
+                }
+            }
+            return dict;
+        }
     }
 }

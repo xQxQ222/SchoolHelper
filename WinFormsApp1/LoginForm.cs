@@ -30,21 +30,11 @@ namespace WinFormsApp1
                 MessageBox.Show("Неправильный логин или пароль");
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             var startScreen = new StartScreen();
             startScreen.Show();
             Close();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void ShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -73,16 +63,6 @@ namespace WinFormsApp1
                 this.Left += e.X - lastPoint.X;
                 this.Top += e.Y - lastPoint.Y;
             }
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PasswordField_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
