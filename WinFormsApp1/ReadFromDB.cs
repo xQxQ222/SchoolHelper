@@ -23,8 +23,8 @@ namespace WinFormsApp1
                 userIsLoggedInSuccessfully = true;
                 var read = command.ExecuteReader();
                 read.Read();
-                User user = new User(read.GetInt32(0), read.GetString(1),
-                    read.GetString(2), read.GetString(3), read.GetString(4), read.GetString(5), read.GetDateTime(6), read.GetString(7), read.GetString(8));
+                User.Current = new User(read.GetInt32(0), read.GetString(1),
+                    read.GetString(2), read.GetString(3), read.GetString(4), read.GetString(5), read.GetDateTime(6), read.GetString(7),read.GetString(8), read.GetString(9));
             }
             else
                 userIsLoggedInSuccessfully = false;
@@ -70,7 +70,7 @@ namespace WinFormsApp1
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `email`=@uE", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `awaitingconfirmation` WHERE `email`=@uE", db.getConnection());
             command.Parameters.Add("@uE", MySqlDbType.VarChar).Value = email;
 
             adapter.SelectCommand = command;
@@ -86,9 +86,8 @@ namespace WinFormsApp1
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login`=@uL", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `awaitingconfirmation` WHERE `login`=@uL", db.getConnection());
             command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = nameOfUser;
-
             adapter.SelectCommand = command;
             adapter.Fill(dt);
 
@@ -188,6 +187,31 @@ namespace WinFormsApp1
                 }
             }
             return dict;
+        }
+        public static User[] getAwaitingUsers()
+        {
+            var users=new List<User>();
+            DB db = new DB();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter=new MySqlDataAdapter();
+            var command =new MySqlCommand("SELECT * FROM `awaitingconfirmation`", db.getConnection());
+            adapter.SelectCommand = command;
+            adapter.Fill(dt);
+            db.openConnection();
+            var reader=command.ExecuteReader();
+            if(dt.Rows.Count > 0)
+            {
+                
+                foreach (DataRow row in dt.Rows)
+                {
+                    reader.Read();
+                    var user=new User(reader.GetInt32(0), reader.GetString(1),
+                    reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetDateTime(6), reader.GetString(7),reader.GetString(8), reader.GetString(9));
+                    users.Add(user);
+                }
+            }
+            db.closeConnection();
+            return users.ToArray();
         }
     }
 }

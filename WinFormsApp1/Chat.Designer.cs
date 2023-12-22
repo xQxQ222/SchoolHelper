@@ -43,11 +43,11 @@
             comboBox1 = new ComboBox();
             label5 = new Label();
             button1 = new Button();
-            listView1 = new ListView();
+            RecievedMessages = new ListView();
             id = new ColumnHeader();
             Sender = new ColumnHeader();
             MessageText = new ColumnHeader();
-            listView2 = new ListView();
+            SendMessages = new ListView();
             id2 = new ColumnHeader();
             Reciever = new ColumnHeader();
             TextOfMessage = new ColumnHeader();
@@ -204,15 +204,15 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += BackButton_Click;
             // 
-            // listView1
+            // RecievedMessages
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { id, Sender, MessageText });
-            listView1.Location = new Point(12, 149);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(715, 288);
-            listView1.TabIndex = 42;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            RecievedMessages.Columns.AddRange(new ColumnHeader[] { id, Sender, MessageText });
+            RecievedMessages.Location = new Point(12, 149);
+            RecievedMessages.Name = "RecievedMessages";
+            RecievedMessages.Size = new Size(715, 288);
+            RecievedMessages.TabIndex = 42;
+            RecievedMessages.UseCompatibleStateImageBehavior = false;
+            RecievedMessages.View = View.Details;
             // 
             // id
             // 
@@ -231,15 +231,15 @@
             MessageText.TextAlign = HorizontalAlignment.Center;
             MessageText.Width = 530;
             // 
-            // listView2
+            // SendMessages
             // 
-            listView2.Columns.AddRange(new ColumnHeader[] { id2, Reciever, TextOfMessage });
-            listView2.Location = new Point(12, 522);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(715, 288);
-            listView2.TabIndex = 43;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
+            SendMessages.Columns.AddRange(new ColumnHeader[] { id2, Reciever, TextOfMessage });
+            SendMessages.Location = new Point(12, 522);
+            SendMessages.Name = "SendMessages";
+            SendMessages.Size = new Size(715, 288);
+            SendMessages.TabIndex = 43;
+            SendMessages.UseCompatibleStateImageBehavior = false;
+            SendMessages.View = View.Details;
             // 
             // id2
             // 
@@ -263,8 +263,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(1500, 1000);
-            Controls.Add(listView2);
-            Controls.Add(listView1);
+            Controls.Add(SendMessages);
+            Controls.Add(RecievedMessages);
             Controls.Add(button1);
             Controls.Add(label5);
             Controls.Add(comboBox1);
@@ -303,8 +303,8 @@
         private ComboBox comboBox1;
         private Label label5;
         private Button button1;
-        private ListView listView1;
-        private ListView listView2;
+        private ListView RecievedMessages;
+        private ListView SendMessages;
         private ColumnHeader id;
         private ColumnHeader Sender;
         private ColumnHeader MessageText;

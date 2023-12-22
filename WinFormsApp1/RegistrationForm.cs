@@ -18,7 +18,6 @@ namespace WinFormsApp1
         {
             List<string> list = new List<string>
             {
-                "",
                 "Администратор",
                 "Учитель",
                 "Ученик"
@@ -70,44 +69,18 @@ namespace WinFormsApp1
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            //if (checkUser() || checkEmail())
             if (ReadFromDB.CheckIfNameOfUserInBD(LoginField.Text) || ReadFromDB.CheckIfEmailInBD(emailBox.Text))
             {
                 MessageBox.Show("Пользователь с таким логином или E-mail уже существует");
                 return;
             }
-            //Тута лежит закоментированный предыдущий код
-            #region
-            //DB db = new DB();
-            //MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `password`, `name`, `last name`,`otchestvo`, `birthdate`, `status`,`email`) VALUES (@log,@pass,@name,@surename,@otch,@birthDate,@status,@email);", db.getConnection());
 
-            //command.Parameters.Add("@log", MySqlDbType.VarChar).Value = LoginField.Text;
-            //command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = PasswordField.Text;
-            //command.Parameters.Add("@name", MySqlDbType.Text).Value = name.Text;
-            //command.Parameters.Add("@surename", MySqlDbType.Text).Value = surname.Text;
-            //command.Parameters.Add("@otch", MySqlDbType.VarChar).Value = Otchestvo.Text;
-            //command.Parameters.Add("@birthDate", MySqlDbType.Date).Value = birthDate.Value;
-            //command.Parameters.Add("@status", MySqlDbType.Text).Value = status.Text;
-            //command.Parameters.Add("@email", MySqlDbType.VarChar).Value = emailBox.Text;
+            User newUser = new User(LoginField.Text, PasswordField.Text, name.Text, surname.Text, Otchestvo.Text, birthDate.Value, status.Text,additionalParameter.Text, emailBox.Text);
 
-            //db.openConnection();
-            //if (command.ExecuteNonQuery() == 1)
-            //    MessageBox.Show("Пользователь успешно зарегистрирован");
-            //else
-            //{
-            //    MessageBox.Show("Ошибка в регистрации. Проверьте заполнены ли все поля");
-            //    return;
-            //}
-            //db.closeConnection();
-            #endregion 
-
-            User newUser = new User() {_login = LoginField.Text, _password = PasswordField.Text,_name = name.Text, _surename = surname.Text,
-                _patronymic = Otchestvo.Text, _Date = birthDate.Value, _status = status.Text, _email = emailBox.Text};
-                    
-            var userSuccessfullyRegistered = WriteToDB.RegisterANewUser(newUser); // логически странно
+            var userSuccessfullyRegistered = WriteToDB.RegisterANewUser(newUser);
 
             if (userSuccessfullyRegistered)
-                MessageBox.Show("Пользователь успешно зарегистрирован");
+                MessageBox.Show("Пользователь успешно занесен в систему. Ожидайте подтверждения аккаунта от администратора");
             else
             {
                 MessageBox.Show("Ошибка в регистрации. Проверьте заполнены ли все поля");
@@ -120,90 +93,26 @@ namespace WinFormsApp1
             this.Close();
         }
 
-        //public bool checkUser()
-        //{
-        //    DB db = new DB();
-        //    DataTable dt = new DataTable();
-
-        //    MySqlDataAdapter adapter = new MySqlDataAdapter();
-
-        //    MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login`=@uL", db.getConnection());
-        //    command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = LoginField.Text;
-
-        //    adapter.SelectCommand = command;
-        //    adapter.Fill(dt);
-
-        //    if (dt.Rows.Count > 0)
-        //    {
-        //        MessageBox.Show("Пользователь с таким именем уже существует");
-        //        return true;
-        //    }
-        //    else
-        //        return false;
-        //}
-        //public bool checkEmail() 
-        //{
-        //    DB db = new DB();
-        //    DataTable dt = new DataTable();
-
-        //    MySqlDataAdapter adapter = new MySqlDataAdapter();
-
-        //    MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `email`=@uE", db.getConnection());
-        //    command.Parameters.Add("@uE", MySqlDbType.VarChar).Value = emailBox.Text;
-
-        //    adapter.SelectCommand = command;
-        //    adapter.Fill(dt);
-
-        //    if (dt.Rows.Count > 0)
-        //    {
-        //        MessageBox.Show("Пользователь с такой почтой уже существует");
-        //        return true;
-        //    }
-        //    else
-        //        return false;
-        //}
-
         private void status_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string stat = status.SelectedItem.ToString();
-        }
+            if (status.SelectedIndex == 0)
+            {
+                label9.Visible = false;
+                additionalParameter.Visible = false;
+            }
+            else if (status.SelectedIndex == 1)
+            {
+                label9.Visible = true;
+                additionalParameter.Visible = true;
+                label9.Text = "Класс";
 
-        private void NameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void SurnameLabel_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void emailBox_TextChanged(object sender, EventArgs e)
-        {
-
+            }
+            else if (status.SelectedIndex == 2)
+            {
+                label9.Visible = true;
+                label9.Text = "Предмет";
+                additionalParameter.Visible = true;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

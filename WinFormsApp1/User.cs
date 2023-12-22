@@ -2,7 +2,7 @@
 
 namespace WinFormsApp1
 {
-    class User
+    public class User
     {
         public int? _id;
         public string _login;
@@ -13,21 +13,33 @@ namespace WinFormsApp1
         public DateTime _Date;
         public string _email;
         public string _status;
-        public static readonly User Current=new User();
-        public User(int id,string login,string pass,string name,string surename,string patronymic,DateTime date,string status,string email)
+        public string _additionalParameter="";
+        public static User Current { get; set; }
+        public User(int id,string login,string pass,string name,string surename,string patronymic,DateTime date,string status,string additionalParameter,string email)
         {
-            Current._id = id;
-            Current._login = login;
-            Current._password = pass;
-            Current._name = name;
-            Current._surename = surename;
-            Current._patronymic = patronymic;
-            Current._Date = date;
-            Current._status = status;
-            Current._email = email;
+            this._id = id;
+            this._login = login;
+            this._password = pass;
+            this._name = name;
+            this._surename = surename;
+            this._patronymic = patronymic;
+            this._Date = date;
+            this._status = status;
+            this._additionalParameter = additionalParameter;
+            this._email = email;
         }
-        public User() 
+        public User( string login, string pass, string name, string surename, string patronymic, DateTime date, string status,string additionalParameter, string email)
         {
+            this._login = login;
+            this._password = pass;
+            this._name = name;
+            this._surename = surename;
+            this._patronymic = patronymic;
+            this._Date = date;
+            this._status = status;
+            this._additionalParameter = additionalParameter;
+            this._email = email;
         }
+        public User() { }
     }
 }

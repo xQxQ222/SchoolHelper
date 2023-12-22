@@ -30,8 +30,8 @@ namespace WinFormsApp1
         }
         public void UpdateChat()
         {
-            listView1.Items.Clear();
-            listView2.Items.Clear();
+            RecievedMessages.Items.Clear();
+            SendMessages.Items.Clear();
             var dict = ReadFromDB.GetMessages();
             var dict2 = ReadFromDB.GetMessagesSends();
             var i = 0;
@@ -42,7 +42,7 @@ namespace WinFormsApp1
                 ListViewItem item = new ListViewItem(i.ToString());
                 item.SubItems.Add(messages.Value.Item1);
                 item.SubItems.Add(messages.Value.Item2);
-                listView1.Items.Add(item);
+                RecievedMessages.Items.Add(item);
             }
             foreach (var messages in dict2)
             {
@@ -50,7 +50,7 @@ namespace WinFormsApp1
                 ListViewItem item = new ListViewItem(k.ToString());
                 item.SubItems.Add(messages.Value.Item1);
                 item.SubItems.Add(messages.Value.Item2);
-                listView2.Items.Add(item);
+                SendMessages.Items.Add(item);
             }
         }
         private void Send_Click(object sender, EventArgs e)

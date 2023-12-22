@@ -15,15 +15,16 @@ namespace WinFormsApp1
             bool userSuccessfullyregistered;
 
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `password`, `name`, `last name`,`otchestvo`, `birthdate`, `status`,`email`) VALUES (@log,@pass,@name,@surename,@otch,@birthDate,@status,@email);", db.getConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO `awaitingconfirmation` (`login`, `password`, `name`, `surname`, `patronymic`, `birthdate`, `status`, `additionalParameter`, `email`) VALUES (@log,@pass,@name,@surname,@otch,@birthDate,@status,@additionalParameter,@email);", db.getConnection());
 
             command.Parameters.Add("@log", MySqlDbType.VarChar).Value = userToReg._login;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = userToReg._password;
-            command.Parameters.Add("@name", MySqlDbType.Text).Value  = userToReg._name;
-            command.Parameters.Add("@surename", MySqlDbType.Text).Value = userToReg._surename;
+            command.Parameters.Add("@name", MySqlDbType.VarChar).Value  = userToReg._name;
+            command.Parameters.Add("@surname", MySqlDbType.VarChar).Value = userToReg._surename;
             command.Parameters.Add("@otch", MySqlDbType.VarChar).Value  = userToReg._patronymic;
             command.Parameters.Add("@birthDate", MySqlDbType.Date).Value = userToReg._Date;
-            command.Parameters.Add("@status", MySqlDbType.Text).Value = userToReg._status;
+            command.Parameters.Add("@status", MySqlDbType.VarChar).Value = userToReg._status;
+            command.Parameters.Add("@additionalParameter", MySqlDbType.VarChar).Value = userToReg._additionalParameter;
             command.Parameters.Add("@email", MySqlDbType.VarChar).Value = userToReg._email;
 
             db.openConnection();
@@ -61,6 +62,36 @@ namespace WinFormsApp1
             dB.openConnection();
             cmd.ExecuteNonQuery();
             dB.closeConnection();
+        }
+
+        public static void ConfirmUser(User userToConfirm)
+        {
+
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `password`, `name`, `last name`, `otchestvo`, `birthdate`, `status`, `additionalParameter`, `email`) VALUES (@log,@pass,@name,@surname,@otch,@birthDate,@status,@additionalParameter,@email);", db.getConnection());
+
+            command.Parameters.Add("@log", MySqlDbType.VarChar).Value = userToConfirm._login;
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = userToConfirm._password;
+            command.Parameters.Add("@name", MySqlDbType.Text).Value = userToConfirm._name;
+            command.Parameters.Add("@surname", MySqlDbType.Text).Value = userToConfirm._surename;
+            command.Parameters.Add("@otch", MySqlDbType.VarChar).Value = userToConfirm._patronymic;
+            command.Parameters.Add("@birthDate", MySqlDbType.Date).Value = userToConfirm._Date;
+            command.Parameters.Add("@status", MySqlDbType.Text).Value = userToConfirm._status;
+            command.Parameters.Add("@additionalParameter", MySqlDbType.VarChar).Value = userToConfirm._additionalParameter;
+            command.Parameters.Add("@email", MySqlDbType.VarChar).Value = userToConfirm._email;
+
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();
+        }
+        public static void DeleteConfirmedUser(User userToDelete)
+        {
+            DB db = new DB();
+            MySqlCommand command= new MySqlCommand("DELETE FROM `awaitingconfirmation` WHERE `awaitingconfirmation`.`id` = @id", db.getConnection());
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = userToDelete._id;
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();
         }
     }
 }

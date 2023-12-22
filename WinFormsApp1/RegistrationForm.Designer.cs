@@ -58,6 +58,8 @@
             pictureBox5 = new PictureBox();
             label7 = new Label();
             ConfirmCodeButton = new Button();
+            label9 = new Label();
+            additionalParameter = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -69,7 +71,7 @@
             // 
             ShowPassword.AutoSize = true;
             ShowPassword.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            ShowPassword.Location = new Point(279, 279);
+            ShowPassword.Location = new Point(279, 246);
             ShowPassword.Name = "ShowPassword";
             ShowPassword.Size = new Size(126, 20);
             ShowPassword.TabIndex = 19;
@@ -80,7 +82,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources._8201380_unlock_padlock_password_ui_lock_icon;
-            pictureBox2.Location = new Point(35, 279);
+            pictureBox2.Location = new Point(35, 246);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(30, 30);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -90,7 +92,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources._1564535_customer_user_userphoto_account_person_icon;
-            pictureBox1.Location = new Point(35, 198);
+            pictureBox1.Location = new Point(35, 178);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(30, 30);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -101,7 +103,7 @@
             // 
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(78, 501);
+            button1.Location = new Point(35, 522);
             button1.Name = "button1";
             button1.Size = new Size(128, 41);
             button1.TabIndex = 16;
@@ -118,13 +120,12 @@
             label3.Size = new Size(403, 81);
             label3.TabIndex = 15;
             label3.Text = "Регистрация";
-            label3.Click += label3_Click;
             // 
             // PasswordField
             // 
             PasswordField.Cursor = Cursors.IBeam;
             PasswordField.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            PasswordField.Location = new Point(71, 276);
+            PasswordField.Location = new Point(71, 246);
             PasswordField.Name = "PasswordField";
             PasswordField.Size = new Size(202, 29);
             PasswordField.TabIndex = 14;
@@ -134,7 +135,7 @@
             // 
             LoginField.Cursor = Cursors.IBeam;
             LoginField.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LoginField.Location = new Point(71, 199);
+            LoginField.Location = new Point(71, 178);
             LoginField.Name = "LoginField";
             LoginField.Size = new Size(202, 29);
             LoginField.TabIndex = 13;
@@ -143,29 +144,27 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(71, 246);
+            label2.Location = new Point(71, 219);
             label2.Name = "label2";
             label2.Size = new Size(75, 24);
             label2.TabIndex = 12;
             label2.Text = "Пароль";
-            label2.Click += label2_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(75, 171);
+            label1.Location = new Point(75, 151);
             label1.Name = "label1";
             label1.Size = new Size(62, 24);
             label1.TabIndex = 11;
             label1.Text = "Логин";
-            label1.Click += label1_Click;
             // 
             // LoginButton
             // 
             LoginButton.Cursor = Cursors.Hand;
             LoginButton.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            LoginButton.Location = new Point(595, 501);
+            LoginButton.Location = new Point(616, 522);
             LoginButton.Name = "LoginButton";
             LoginButton.Size = new Size(128, 41);
             LoginButton.TabIndex = 10;
@@ -188,7 +187,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.png_transparent_name_tag_computer_icons_logo_id_card_miscellaneous_text_silhouette;
-            pictureBox3.Location = new Point(471, 198);
+            pictureBox3.Location = new Point(471, 179);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(30, 30);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -199,7 +198,7 @@
             // 
             name.Cursor = Cursors.IBeam;
             name.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            name.Location = new Point(507, 198);
+            name.Location = new Point(507, 179);
             name.Name = "name";
             name.Size = new Size(202, 29);
             name.TabIndex = 30;
@@ -208,18 +207,17 @@
             // 
             NameLabel.AutoSize = true;
             NameLabel.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            NameLabel.Location = new Point(507, 171);
+            NameLabel.Location = new Point(507, 151);
             NameLabel.Name = "NameLabel";
             NameLabel.Size = new Size(50, 24);
             NameLabel.TabIndex = 29;
             NameLabel.Text = "Имя";
-            NameLabel.Click += NameLabel_Click;
             // 
             // surname
             // 
             surname.Cursor = Cursors.IBeam;
             surname.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            surname.Location = new Point(507, 257);
+            surname.Location = new Point(507, 246);
             surname.Name = "surname";
             surname.Size = new Size(202, 29);
             surname.TabIndex = 33;
@@ -228,16 +226,15 @@
             // 
             SurnameLabel.AutoSize = true;
             SurnameLabel.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            SurnameLabel.Location = new Point(507, 230);
+            SurnameLabel.Location = new Point(507, 219);
             SurnameLabel.Name = "SurnameLabel";
             SurnameLabel.Size = new Size(93, 24);
             SurnameLabel.TabIndex = 32;
             SurnameLabel.Text = "Фамилия";
-            SurnameLabel.Click += SurnameLabel_Click;
             // 
             // birthDate
             // 
-            birthDate.Location = new Point(507, 380);
+            birthDate.Location = new Point(507, 364);
             birthDate.Name = "birthDate";
             birthDate.Size = new Size(200, 23);
             birthDate.TabIndex = 34;
@@ -246,17 +243,16 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(507, 351);
+            label4.Location = new Point(507, 337);
             label4.Name = "label4";
             label4.Size = new Size(148, 24);
             label4.TabIndex = 35;
             label4.Text = "Дата Рождения";
-            label4.Click += label4_Click;
             // 
             // status
             // 
             status.FormattingEnabled = true;
-            status.Location = new Point(507, 433);
+            status.Location = new Point(507, 417);
             status.Name = "status";
             status.Size = new Size(200, 23);
             status.TabIndex = 36;
@@ -266,17 +262,16 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(507, 406);
+            label5.Location = new Point(507, 390);
             label5.Name = "label5";
             label5.Size = new Size(68, 24);
             label5.TabIndex = 37;
             label5.Text = "Статус";
-            label5.Click += label5_Click;
             // 
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources._134146_mail_email_icon;
-            pictureBox4.Location = new Point(35, 348);
+            pictureBox4.Location = new Point(35, 306);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(30, 30);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -287,28 +282,26 @@
             // 
             emailBox.Cursor = Cursors.IBeam;
             emailBox.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            emailBox.Location = new Point(71, 348);
+            emailBox.Location = new Point(71, 307);
             emailBox.Name = "emailBox";
             emailBox.Size = new Size(202, 29);
             emailBox.TabIndex = 39;
-            emailBox.TextChanged += emailBox_TextChanged;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(71, 321);
+            label6.Location = new Point(71, 280);
             label6.Name = "label6";
             label6.Size = new Size(66, 24);
             label6.TabIndex = 38;
             label6.Text = "E-Mail";
-            label6.Click += label6_Click;
             // 
             // textBox1
             // 
             textBox1.Cursor = Cursors.IBeam;
             textBox1.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(507, 316);
+            textBox1.Location = new Point(507, 305);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(202, 29);
             textBox1.TabIndex = 42;
@@ -317,7 +310,7 @@
             // 
             Otchestvo.AutoSize = true;
             Otchestvo.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            Otchestvo.Location = new Point(507, 289);
+            Otchestvo.Location = new Point(507, 278);
             Otchestvo.Name = "Otchestvo";
             Otchestvo.Size = new Size(93, 24);
             Otchestvo.TabIndex = 41;
@@ -328,7 +321,7 @@
             button2.Cursor = Cursors.Hand;
             button2.FlatStyle = FlatStyle.Popup;
             button2.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(279, 348);
+            button2.Location = new Point(279, 308);
             button2.Name = "button2";
             button2.Size = new Size(103, 30);
             button2.TabIndex = 43;
@@ -340,7 +333,7 @@
             // 
             codeField.Cursor = Cursors.IBeam;
             codeField.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            codeField.Location = new Point(71, 427);
+            codeField.Location = new Point(71, 381);
             codeField.Name = "codeField";
             codeField.Size = new Size(122, 29);
             codeField.TabIndex = 44;
@@ -348,7 +341,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources._8678775_fingerprint_biometric_security_icon;
-            pictureBox5.Location = new Point(35, 426);
+            pictureBox5.Location = new Point(35, 380);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(30, 30);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -359,7 +352,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(71, 400);
+            label7.Location = new Point(71, 351);
             label7.Name = "label7";
             label7.Size = new Size(122, 24);
             label7.TabIndex = 48;
@@ -370,7 +363,7 @@
             ConfirmCodeButton.Cursor = Cursors.Hand;
             ConfirmCodeButton.FlatStyle = FlatStyle.Popup;
             ConfirmCodeButton.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            ConfirmCodeButton.Location = new Point(199, 426);
+            ConfirmCodeButton.Location = new Point(199, 382);
             ConfirmCodeButton.Name = "ConfirmCodeButton";
             ConfirmCodeButton.Size = new Size(103, 30);
             ConfirmCodeButton.TabIndex = 49;
@@ -378,12 +371,31 @@
             ConfirmCodeButton.UseVisualStyleBackColor = true;
             ConfirmCodeButton.Click += button3_Click;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(507, 443);
+            label9.Name = "label9";
+            label9.Size = new Size(63, 24);
+            label9.TabIndex = 50;
+            label9.Text = "Класс";
+            // 
+            // additionalParameter
+            // 
+            additionalParameter.Location = new Point(507, 470);
+            additionalParameter.Name = "additionalParameter";
+            additionalParameter.Size = new Size(202, 23);
+            additionalParameter.TabIndex = 52;
+            // 
             // RegistrationForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(800, 600);
+            Controls.Add(additionalParameter);
+            Controls.Add(label9);
             Controls.Add(ConfirmCodeButton);
             Controls.Add(label7);
             Controls.Add(pictureBox5);
@@ -462,5 +474,7 @@
         private PictureBox pictureBox5;
         private Label label7;
         private Button ConfirmCodeButton;
+        private Label label9;
+        private TextBox additionalParameter;
     }
 }

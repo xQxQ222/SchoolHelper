@@ -28,71 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            verifyUser = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            button1 = new Button();
             button3 = new Button();
             label8 = new Label();
-            ((System.ComponentModel.ISupportInitialize)verifyUser).BeginInit();
+            UsersWaitingForConfirm = new DataGridView();
+            id = new DataGridViewTextBoxColumn();
+            FIO = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            AdditionalStatus = new DataGridViewTextBoxColumn();
+            ConfirmButton = new DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)UsersWaitingForConfirm).BeginInit();
             SuspendLayout();
-            // 
-            // verifyUser
-            // 
-            verifyUser.BackgroundColor = SystemColors.ControlDarkDark;
-            verifyUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            verifyUser.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
-            verifyUser.Location = new Point(60, 128);
-            verifyUser.Name = "verifyUser";
-            verifyUser.RowTemplate.Height = 25;
-            verifyUser.Size = new Size(640, 161);
-            verifyUser.TabIndex = 0;
-            verifyUser.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Фамилия";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Имя";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Отчество";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Статус";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Дата Рождения";
-            Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "";
-            Column6.Name = "Column6";
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(128, 255, 128);
-            button1.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(600, 165);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 25);
-            button1.TabIndex = 1;
-            button1.Text = "Подтвердить";
-            button1.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -119,37 +64,79 @@
             label8.Text = "X";
             label8.Click += label8_Click;
             // 
+            // UsersWaitingForConfirm
+            // 
+            UsersWaitingForConfirm.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            UsersWaitingForConfirm.Columns.AddRange(new DataGridViewColumn[] { id, FIO, Status, AdditionalStatus, ConfirmButton });
+            UsersWaitingForConfirm.Location = new Point(28, 35);
+            UsersWaitingForConfirm.Name = "UsersWaitingForConfirm";
+            UsersWaitingForConfirm.RowTemplate.Height = 25;
+            UsersWaitingForConfirm.Size = new Size(735, 485);
+            UsersWaitingForConfirm.TabIndex = 56;
+            UsersWaitingForConfirm.CellContentClick += UsersWaitingForConfirm_CellContentClick_1;
+            // 
+            // id
+            // 
+            id.HeaderText = "id";
+            id.Name = "id";
+            id.ReadOnly = true;
+            id.Width = 40;
+            // 
+            // FIO
+            // 
+            FIO.HeaderText = "ФИО";
+            FIO.Name = "FIO";
+            FIO.ReadOnly = true;
+            FIO.Width = 250;
+            // 
+            // Status
+            // 
+            Status.HeaderText = "Статус";
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            Status.Width = 150;
+            // 
+            // AdditionalStatus
+            // 
+            AdditionalStatus.HeaderText = "Класс/Предмет";
+            AdditionalStatus.Name = "AdditionalStatus";
+            AdditionalStatus.ReadOnly = true;
+            // 
+            // ConfirmButton
+            // 
+            ConfirmButton.HeaderText = "Кнопка подтверждения";
+            ConfirmButton.Name = "ConfirmButton";
+            ConfirmButton.Text = "Подтвердить";
+            ConfirmButton.UseColumnTextForButtonValue = true;
+            ConfirmButton.Width = 150;
+            // 
             // VerifyUsers
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(227, 244, 244);
             ClientSize = new Size(800, 600);
+            Controls.Add(UsersWaitingForConfirm);
             Controls.Add(label8);
             Controls.Add(button3);
-            Controls.Add(button1);
-            Controls.Add(verifyUser);
             FormBorderStyle = FormBorderStyle.None;
             Name = "VerifyUsers";
             StartPosition = FormStartPosition.CenterParent;
             Text = "VerifyUsers";
             Load += VerifyUsers_Load;
-            ((System.ComponentModel.ISupportInitialize)verifyUser).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UsersWaitingForConfirm).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private DataGridView verifyUser;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private Button button1;
         private Button button3;
         private Label label8;
+        private DataGridView UsersWaitingForConfirm;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn FIO;
+        private DataGridViewTextBoxColumn Status;
+        private DataGridViewTextBoxColumn AdditionalStatus;
+        private DataGridViewButtonColumn ConfirmButton;
     }
 }
