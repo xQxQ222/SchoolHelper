@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Net;
+using WinFormsApp1.OpenWeather;
 using WinFormsApp1.Properties;
 
 namespace WinFormsApp1
@@ -11,7 +12,57 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private async void Menu_Load(object sender, EventArgs e)
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            PrepareToLoad();
+            ShowWeater();
+            ShowNews();
+        }
+        private void ShowNews()
+        {
+            var news = ReadFromDB.GetNewsFromDB();
+            var firstNews = new News();
+            var secondNews= new News();
+            var thirdNews= new News();
+            var fourthNews= new News();
+            if (news.Length >= 1)
+            {
+                firstNews = news[news.Length - 1];
+                newsIcon1.Image = ByteArrayToImage(firstNews.image);
+                newsText1.Text=firstNews.text;
+                newsAuthor1.Text=firstNews.author;
+            }
+            if(news.Length >= 2)
+            {
+                secondNews = news[news.Length - 2];
+                newsIcon2.Image = ByteArrayToImage(secondNews.image);
+                newsText2.Text = secondNews.text;
+                newsAuthor2.Text = secondNews.author;
+            }
+            if(news.Length >= 3)
+            {
+                thirdNews = news[news.Length - 3];
+                newsIcon3.Image = ByteArrayToImage(thirdNews.image);
+                newsText3.Text = thirdNews.text;
+                newsAuthor3.Text = thirdNews.author;
+            }
+            if(news.Length >= 4)
+            {
+                fourthNews = news[news.Length - 4];
+                newsIcon4.Image = ByteArrayToImage(fourthNews.image);
+                newsText4.Text = fourthNews.text;
+                newsAuthor4.Text = fourthNews.author;
+            }
+        }
+        private static Image ByteArrayToImage(byte[] blobData)
+        {
+            using (MemoryStream ms = new MemoryStream(blobData))
+            {
+                Image image = Image.FromStream(ms);
+                return image;
+            }
+        }
+        private void PrepareToLoad()
         {
             flowLayoutPanel1.Visible = false;
             if (User.Current._status == "Администратор")
@@ -24,8 +75,8 @@ namespace WinFormsApp1
                 pictureBox4.Location = new System.Drawing.Point(335, 417);
                 pictureBox2.Location = new System.Drawing.Point(335, 654);
                 pictureBox11.Location = new System.Drawing.Point(335, 856);
-                richTextBox1.ReadOnly = false; richTextBox2.ReadOnly = false;
-                richTextBox3.ReadOnly = false; richTextBox4.ReadOnly = false;
+                newsText1.ReadOnly = false; newsText2.ReadOnly = false;
+                newsText3.ReadOnly = false; newsText4.ReadOnly = false;
             }
             else
             {
@@ -38,11 +89,14 @@ namespace WinFormsApp1
                 pictureBox5.Location = new System.Drawing.Point(325, 211);
                 pictureBox4.Location = new System.Drawing.Point(325, 505);
                 pictureBox2.Location = new System.Drawing.Point(325, 782);
-                richTextBox1.ReadOnly = true;
-                richTextBox2.ReadOnly = true;
-                richTextBox3.ReadOnly = true;
-                richTextBox4.ReadOnly = true;
+                newsText1.ReadOnly = true;
+                newsText2.ReadOnly = true;
+                newsText3.ReadOnly = true;
+                newsText4.ReadOnly = true;
             }
+        }
+        private async void ShowWeater()
+        {
             WebRequest request = WebRequest.Create("https://api.openweathermap.org/data/2.5/weather?q=Izhevsk&APPID=94048917cc9847b12ba053b704683a9e");
             request.Method = "POST";
             request.ContentType = "application/x-www-urlencoded";
@@ -107,7 +161,7 @@ namespace WinFormsApp1
                     else if (temp > -16)
                         HighSchoolPEIcon.Image = Resources.Confirm;
                 }
-                else if (windSpeed <= 5 && windSpeed>0)
+                else if (windSpeed <= 5 && windSpeed > 0)
                 {
                     if (temp > -6)
                     {
@@ -123,7 +177,7 @@ namespace WinFormsApp1
                     else if (temp > -15)
                         HighSchoolPEIcon.Image = Resources.Confirm;
                 }
-                else if (windSpeed <= 10&& windSpeed>5)
+                else if (windSpeed <= 10 && windSpeed > 5)
                 {
                     if (temp > -3)
                     {

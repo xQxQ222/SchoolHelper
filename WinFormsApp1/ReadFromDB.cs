@@ -1,5 +1,6 @@
 ﻿using MySqlConnector;
 using System.Data;
+using System.Text;
 
 namespace WinFormsApp1
 {
@@ -212,6 +213,33 @@ namespace WinFormsApp1
             }
             db.closeConnection();
             return users.ToArray();
+        }
+
+        public static News[] GetNewsFromDB()
+        {
+            var db = new DB();
+            var newsArray = new List<News>();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            var command = new MySqlCommand("SELECT * FROM `news`", db.getConnection());
+            adapter.SelectCommand= command;
+            adapter.Fill(dt);
+            db.openConnection();
+            var reader=command.ExecuteReader();
+            if(dt.Rows.Count > 0 )
+            {
+                foreach(DataRow row in dt.Rows)
+                {
+                    reader.Read();
+                    var news=new News();
+                    news.id= reader.GetInt32(0);
+                    news.author = "Автор: " + reader.GetString(1);
+                    news.text = reader.GetString(2);
+                    news.image=(byte[])reader[3];
+                    newsArray.Add(news);
+                }
+            }
+            return newsArray.ToArray();
         }
     }
 }

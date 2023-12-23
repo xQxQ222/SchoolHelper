@@ -47,22 +47,21 @@
             label11 = new Label();
             groupBox3 = new GroupBox();
             pictureBox15 = new PictureBox();
-            richTextBox1 = new RichTextBox();
-            pictureBox6 = new PictureBox();
+            newsText1 = new RichTextBox();
+            newsIcon1 = new PictureBox();
             groupBox4 = new GroupBox();
-            richTextBox2 = new RichTextBox();
-            pictureBox7 = new PictureBox();
+            newsText2 = new RichTextBox();
+            newsIcon2 = new PictureBox();
             groupBox5 = new GroupBox();
-            richTextBox3 = new RichTextBox();
-            pictureBox8 = new PictureBox();
+            newsText3 = new RichTextBox();
+            newsIcon3 = new PictureBox();
             groupBox6 = new GroupBox();
-            richTextBox4 = new RichTextBox();
-            pictureBox9 = new PictureBox();
+            newsText4 = new RichTextBox();
+            newsIcon4 = new PictureBox();
             panel4 = new Panel();
             panel12 = new Panel();
             panel13 = new Panel();
             pictureBox10 = new PictureBox();
-            pictureBox16 = new PictureBox();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
@@ -93,6 +92,10 @@
             HighSchoolPEIcon = new PictureBox();
             MiddleSchoolPEIcon = new PictureBox();
             PrimarySchoolPEIcon = new PictureBox();
+            newsAuthor1 = new Label();
+            newsAuthor2 = new Label();
+            newsAuthor3 = new Label();
+            newsAuthor4 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             panel9.SuspendLayout();
@@ -103,16 +106,15 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)newsIcon1).BeginInit();
             groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)newsIcon2).BeginInit();
             groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)newsIcon3).BeginInit();
             groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)newsIcon4).BeginInit();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
@@ -327,8 +329,8 @@
             // groupBox3
             // 
             groupBox3.Controls.Add(pictureBox15);
-            groupBox3.Controls.Add(richTextBox1);
-            groupBox3.Controls.Add(pictureBox6);
+            groupBox3.Controls.Add(newsText1);
+            groupBox3.Controls.Add(newsIcon1);
             groupBox3.Location = new Point(511, 133);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(777, 436);
@@ -344,28 +346,29 @@
             pictureBox15.TabIndex = 2;
             pictureBox15.TabStop = false;
             // 
-            // richTextBox1
+            // newsText1
             // 
-            richTextBox1.BackColor = Color.FromArgb(142, 172, 205);
-            richTextBox1.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            richTextBox1.Location = new Point(308, 32);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(438, 378);
-            richTextBox1.TabIndex = 1;
-            richTextBox1.Text = "";
+            newsText1.BackColor = Color.FromArgb(142, 172, 205);
+            newsText1.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            newsText1.Location = new Point(308, 32);
+            newsText1.Name = "newsText1";
+            newsText1.Size = new Size(438, 378);
+            newsText1.TabIndex = 1;
+            newsText1.Text = "";
             // 
-            // pictureBox6
+            // newsIcon1
             // 
-            pictureBox6.Location = new Point(19, 32);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(239, 227);
-            pictureBox6.TabIndex = 0;
-            pictureBox6.TabStop = false;
+            newsIcon1.Location = new Point(19, 32);
+            newsIcon1.Name = "newsIcon1";
+            newsIcon1.Size = new Size(239, 227);
+            newsIcon1.SizeMode = PictureBoxSizeMode.Zoom;
+            newsIcon1.TabIndex = 0;
+            newsIcon1.TabStop = false;
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(richTextBox2);
-            groupBox4.Controls.Add(pictureBox7);
+            groupBox4.Controls.Add(newsText2);
+            groupBox4.Controls.Add(newsIcon2);
             groupBox4.Location = new Point(521, 613);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(767, 100);
@@ -373,28 +376,29 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "2-я новость";
             // 
-            // richTextBox2
+            // newsText2
             // 
-            richTextBox2.BackColor = Color.FromArgb(142, 172, 205);
-            richTextBox2.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            richTextBox2.Location = new Point(148, 22);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(588, 64);
-            richTextBox2.TabIndex = 1;
-            richTextBox2.Text = "";
+            newsText2.BackColor = Color.FromArgb(142, 172, 205);
+            newsText2.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            newsText2.Location = new Point(148, 22);
+            newsText2.Name = "newsText2";
+            newsText2.Size = new Size(588, 64);
+            newsText2.TabIndex = 1;
+            newsText2.Text = "";
             // 
-            // pictureBox7
+            // newsIcon2
             // 
-            pictureBox7.Location = new Point(9, 22);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(69, 72);
-            pictureBox7.TabIndex = 0;
-            pictureBox7.TabStop = false;
+            newsIcon2.Location = new Point(9, 22);
+            newsIcon2.Name = "newsIcon2";
+            newsIcon2.Size = new Size(69, 72);
+            newsIcon2.SizeMode = PictureBoxSizeMode.Zoom;
+            newsIcon2.TabIndex = 0;
+            newsIcon2.TabStop = false;
             // 
             // groupBox5
             // 
-            groupBox5.Controls.Add(richTextBox3);
-            groupBox5.Controls.Add(pictureBox8);
+            groupBox5.Controls.Add(newsText3);
+            groupBox5.Controls.Add(newsIcon3);
             groupBox5.Location = new Point(521, 763);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(767, 100);
@@ -402,28 +406,29 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "3-я новость";
             // 
-            // richTextBox3
+            // newsText3
             // 
-            richTextBox3.BackColor = Color.FromArgb(142, 172, 205);
-            richTextBox3.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            richTextBox3.Location = new Point(148, 22);
-            richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(588, 64);
-            richTextBox3.TabIndex = 2;
-            richTextBox3.Text = "";
+            newsText3.BackColor = Color.FromArgb(142, 172, 205);
+            newsText3.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            newsText3.Location = new Point(148, 22);
+            newsText3.Name = "newsText3";
+            newsText3.Size = new Size(588, 64);
+            newsText3.TabIndex = 2;
+            newsText3.Text = "";
             // 
-            // pictureBox8
+            // newsIcon3
             // 
-            pictureBox8.Location = new Point(9, 22);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(69, 72);
-            pictureBox8.TabIndex = 1;
-            pictureBox8.TabStop = false;
+            newsIcon3.Location = new Point(9, 22);
+            newsIcon3.Name = "newsIcon3";
+            newsIcon3.Size = new Size(69, 72);
+            newsIcon3.SizeMode = PictureBoxSizeMode.Zoom;
+            newsIcon3.TabIndex = 1;
+            newsIcon3.TabStop = false;
             // 
             // groupBox6
             // 
-            groupBox6.Controls.Add(richTextBox4);
-            groupBox6.Controls.Add(pictureBox9);
+            groupBox6.Controls.Add(newsText4);
+            groupBox6.Controls.Add(newsIcon4);
             groupBox6.Location = new Point(521, 888);
             groupBox6.Name = "groupBox6";
             groupBox6.Size = new Size(767, 100);
@@ -431,23 +436,24 @@
             groupBox6.TabStop = false;
             groupBox6.Text = "4-я новость";
             // 
-            // richTextBox4
+            // newsText4
             // 
-            richTextBox4.BackColor = Color.FromArgb(142, 172, 205);
-            richTextBox4.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            richTextBox4.Location = new Point(148, 22);
-            richTextBox4.Name = "richTextBox4";
-            richTextBox4.Size = new Size(588, 64);
-            richTextBox4.TabIndex = 3;
-            richTextBox4.Text = "";
+            newsText4.BackColor = Color.FromArgb(142, 172, 205);
+            newsText4.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            newsText4.Location = new Point(148, 22);
+            newsText4.Name = "newsText4";
+            newsText4.Size = new Size(588, 64);
+            newsText4.TabIndex = 3;
+            newsText4.Text = "";
             // 
-            // pictureBox9
+            // newsIcon4
             // 
-            pictureBox9.Location = new Point(9, 22);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(69, 72);
-            pictureBox9.TabIndex = 2;
-            pictureBox9.TabStop = false;
+            newsIcon4.Location = new Point(9, 22);
+            newsIcon4.Name = "newsIcon4";
+            newsIcon4.Size = new Size(69, 72);
+            newsIcon4.SizeMode = PictureBoxSizeMode.Zoom;
+            newsIcon4.TabIndex = 2;
+            newsIcon4.TabStop = false;
             // 
             // panel4
             // 
@@ -486,14 +492,6 @@
             pictureBox10.TabIndex = 11;
             pictureBox10.TabStop = false;
             pictureBox10.Click += pictureBox10_Click;
-            // 
-            // pictureBox16
-            // 
-            pictureBox16.Location = new Point(1258, 567);
-            pictureBox16.Name = "pictureBox16";
-            pictureBox16.Size = new Size(30, 30);
-            pictureBox16.TabIndex = 12;
-            pictureBox16.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -827,13 +825,56 @@
             PrimarySchoolPEIcon.TabIndex = 35;
             PrimarySchoolPEIcon.TabStop = false;
             // 
+            // newsAuthor1
+            // 
+            newsAuthor1.AutoSize = true;
+            newsAuthor1.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            newsAuthor1.Location = new Point(1060, 571);
+            newsAuthor1.Name = "newsAuthor1";
+            newsAuthor1.Size = new Size(62, 21);
+            newsAuthor1.TabIndex = 12;
+            newsAuthor1.Text = "label16";
+            // 
+            // newsAuthor2
+            // 
+            newsAuthor2.AutoSize = true;
+            newsAuthor2.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            newsAuthor2.Location = new Point(1060, 717);
+            newsAuthor2.Name = "newsAuthor2";
+            newsAuthor2.Size = new Size(62, 21);
+            newsAuthor2.TabIndex = 13;
+            newsAuthor2.Text = "label17";
+            // 
+            // newsAuthor3
+            // 
+            newsAuthor3.AutoSize = true;
+            newsAuthor3.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            newsAuthor3.Location = new Point(1060, 864);
+            newsAuthor3.Name = "newsAuthor3";
+            newsAuthor3.Size = new Size(62, 21);
+            newsAuthor3.TabIndex = 14;
+            newsAuthor3.Text = "label18";
+            // 
+            // newsAuthor4
+            // 
+            newsAuthor4.AutoSize = true;
+            newsAuthor4.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            newsAuthor4.Location = new Point(1060, 977);
+            newsAuthor4.Name = "newsAuthor4";
+            newsAuthor4.Size = new Size(62, 21);
+            newsAuthor4.TabIndex = 15;
+            newsAuthor4.Text = "label19";
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 245, 244);
             ClientSize = new Size(1800, 1000);
-            Controls.Add(pictureBox16);
+            Controls.Add(newsAuthor4);
+            Controls.Add(newsAuthor3);
+            Controls.Add(newsAuthor2);
+            Controls.Add(newsAuthor1);
             Controls.Add(pictureBox10);
             Controls.Add(panel4);
             Controls.Add(groupBox6);
@@ -861,17 +902,16 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)newsIcon1).EndInit();
             groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)newsIcon2).EndInit();
             groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)newsIcon3).EndInit();
             groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)newsIcon4).EndInit();
             panel12.ResumeLayout(false);
             panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -889,6 +929,7 @@
             ((System.ComponentModel.ISupportInitialize)MiddleSchoolPEIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)PrimarySchoolPEIcon).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -906,14 +947,14 @@
         private GroupBox groupBox4;
         private GroupBox groupBox5;
         private GroupBox groupBox6;
-        private RichTextBox richTextBox1;
-        private PictureBox pictureBox6;
-        private RichTextBox richTextBox2;
-        private PictureBox pictureBox7;
-        private RichTextBox richTextBox3;
-        private PictureBox pictureBox8;
-        private RichTextBox richTextBox4;
-        private PictureBox pictureBox9;
+        private RichTextBox newsText1;
+        private PictureBox newsIcon1;
+        private RichTextBox newsText2;
+        private PictureBox newsIcon2;
+        private RichTextBox newsText3;
+        private PictureBox newsIcon3;
+        private RichTextBox newsText4;
+        private PictureBox newsIcon4;
         private Panel panel3;
         private Panel panel5;
         private Panel panel4;
@@ -928,7 +969,6 @@
         private Button button4;
         private GroupBox groupBox2;
         private PictureBox pictureBox15;
-        private PictureBox pictureBox16;
         private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
@@ -959,5 +999,9 @@
         private PictureBox PrimarySchoolPEIcon;
         private Label label15;
         private Label label14;
+        private Label newsAuthor1;
+        private Label newsAuthor2;
+        private Label newsAuthor3;
+        private Label newsAuthor4;
     }
 }

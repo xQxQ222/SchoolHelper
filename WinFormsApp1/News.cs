@@ -8,6 +8,7 @@ namespace WinFormsApp1
 {
     class News
     {
+        public int id;
         public string author;
         public string text;
         public byte[] image;
