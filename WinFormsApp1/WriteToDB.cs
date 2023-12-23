@@ -93,5 +93,17 @@ namespace WinFormsApp1
             command.ExecuteNonQuery();
             db.closeConnection();
         }
+
+        public static void CreateNews(News news)
+        {
+            DB dB = new DB();
+            MySqlCommand command= new MySqlCommand("INSERT INTO `news` (`author`, `text`, `Image`) VALUES (@author, @text,@image)", dB.getConnection());
+            command.Parameters.Add("@author", MySqlDbType.VarChar).Value = news.author;
+            command.Parameters.Add("@text", MySqlDbType.Text).Value = news.text;
+            command.Parameters.Add("@image", MySqlDbType.Blob).Value = news.image;
+            dB.openConnection();
+            command.ExecuteNonQuery();
+            dB.closeConnection();
+        }
     }
 }

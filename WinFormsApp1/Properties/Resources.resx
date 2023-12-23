@@ -184,4 +184,58 @@
   <data name="Decline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2075833_cross_decline_false_reject_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_01d_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\01d@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_01n_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\01n@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02d_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\02d@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02n_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\02n@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_03d_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\03d@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_03n_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\03n@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04d_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\04d@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04n_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\04n@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_09d_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\09d@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_09n_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\09n@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10d_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\10d@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10n_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\10n@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_11d_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\11d@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_11n_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\11n@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_13d_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\13d@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_13n_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\13n@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_50d_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\50d@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_50n_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\50n@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

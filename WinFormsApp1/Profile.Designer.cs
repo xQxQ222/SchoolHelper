@@ -76,7 +76,6 @@
             button1.TabIndex = 2;
             button1.Text = "Сменить фотографию";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // label2
             // 

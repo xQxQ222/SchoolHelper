@@ -63,7 +63,7 @@ namespace WinFormsApp1
 
             OpenWeather.OpenWeather oW = JsonConvert.DeserializeObject<OpenWeather.OpenWeather>(answer);
 
-            //WeatherIcon.Image = oW.weather[0].Icon;
+            WeatherIcon.Image = oW.weather[0].Icon;
 
             string plus;
             if (oW.main.temp > 0)

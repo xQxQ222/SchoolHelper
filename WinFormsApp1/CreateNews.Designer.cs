@@ -30,13 +30,13 @@
         {
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
+            SelectImage = new Button();
             label2 = new Label();
             richTextBox1 = new RichTextBox();
             comboBox1 = new ComboBox();
             label3 = new Label();
-            button2 = new Button();
-            button3 = new Button();
+            createNewsButton = new Button();
+            BackButton = new Button();
             label4 = new Label();
             panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -62,18 +62,18 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // button1
+            // SelectImage
             // 
-            button1.Cursor = Cursors.Hand;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(118, 412);
-            button1.Name = "button1";
-            button1.Size = new Size(152, 44);
-            button1.TabIndex = 3;
-            button1.Text = "Выбрать фото\r\n";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            SelectImage.Cursor = Cursors.Hand;
+            SelectImage.FlatStyle = FlatStyle.Flat;
+            SelectImage.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            SelectImage.Location = new Point(118, 412);
+            SelectImage.Name = "SelectImage";
+            SelectImage.Size = new Size(152, 44);
+            SelectImage.TabIndex = 3;
+            SelectImage.Text = "Выбрать фото\r\n";
+            SelectImage.UseVisualStyleBackColor = true;
+            SelectImage.Click += button1_Click;
             // 
             // label2
             // 
@@ -100,7 +100,6 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(225, 23);
             comboBox1.TabIndex = 6;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -112,31 +111,32 @@
             label3.TabIndex = 7;
             label3.Text = "Выберите автора новости:\r\n";
             // 
-            // button2
+            // createNewsButton
             // 
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(798, 917);
-            button2.Name = "button2";
-            button2.Size = new Size(178, 71);
-            button2.TabIndex = 8;
-            button2.Text = "Создать новость";
-            button2.UseVisualStyleBackColor = true;
+            createNewsButton.FlatStyle = FlatStyle.Flat;
+            createNewsButton.Font = new Font("Franklin Gothic Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            createNewsButton.Location = new Point(798, 917);
+            createNewsButton.Name = "createNewsButton";
+            createNewsButton.Size = new Size(178, 71);
+            createNewsButton.TabIndex = 8;
+            createNewsButton.Text = "Создать новость";
+            createNewsButton.UseVisualStyleBackColor = true;
+            createNewsButton.Click += createNewsButton_Click;
             // 
-            // button3
+            // BackButton
             // 
-            button3.Cursor = Cursors.Hand;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(12, 917);
-            button3.Name = "button3";
-            button3.Size = new Size(169, 71);
-            button3.TabIndex = 17;
-            button3.Text = "Назад";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            button3.MouseDown += button3_MouseDown;
-            button3.MouseMove += button3_MouseMove;
+            BackButton.Cursor = Cursors.Hand;
+            BackButton.FlatStyle = FlatStyle.Flat;
+            BackButton.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            BackButton.Location = new Point(12, 917);
+            BackButton.Name = "BackButton";
+            BackButton.Size = new Size(169, 71);
+            BackButton.TabIndex = 17;
+            BackButton.Text = "Назад";
+            BackButton.UseVisualStyleBackColor = true;
+            BackButton.Click += button3_Click;
+            BackButton.MouseDown += button3_MouseDown;
+            BackButton.MouseMove += button3_MouseMove;
             // 
             // label4
             // 
@@ -166,13 +166,13 @@
             BackColor = SystemColors.Info;
             ClientSize = new Size(1000, 1000);
             Controls.Add(label4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(BackButton);
+            Controls.Add(createNewsButton);
             Controls.Add(label3);
             Controls.Add(comboBox1);
             Controls.Add(richTextBox1);
             Controls.Add(label2);
-            Controls.Add(button1);
+            Controls.Add(SelectImage);
             Controls.Add(label1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -190,13 +190,13 @@
 
         private Label label1;
         private PictureBox pictureBox1;
-        private Button button1;
+        private Button SelectImage;
         private Label label2;
         private RichTextBox richTextBox1;
         private ComboBox comboBox1;
         private Label label3;
-        private Button button2;
-        private Button button3;
+        private Button createNewsButton;
+        private Button BackButton;
         private Label label4;
         private Panel panel1;
     }

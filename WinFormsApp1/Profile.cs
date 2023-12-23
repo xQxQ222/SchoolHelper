@@ -22,11 +22,6 @@ namespace WinFormsApp1
             Application.Exit();
         }
 
-        private void name_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Profile_Load(object sender, EventArgs e)
         {
             name.Text = User.Current._name;
@@ -36,20 +31,7 @@ namespace WinFormsApp1
             birthDate.Text = User.Current._Date.ToShortDateString();
             email.Text = User.Current._email;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            using (var openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
-                }
-            }
-        }
+ 
 
         private void button2_Click(object sender, EventArgs e)
         {
