@@ -57,7 +57,7 @@ namespace WinFormsApp1
         {
             var recip = ReadFromDB.GetRecipients();
 
-            WriteToDB.AddNewMessage(recip, comboBox1.Text, richTextBox1.Text);
+            ChangeDBData.AddNewMessage(recip, comboBox1.Text, richTextBox1.Text);
 
             MessageBox.Show("Сообщение успешно отправлено");
             richTextBox1.Clear();

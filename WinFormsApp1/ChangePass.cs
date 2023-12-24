@@ -61,7 +61,7 @@ namespace WinFormsApp1
         {
             if (int.Parse(CodeBox.Text) == code && code != 0)
             {
-                WriteToDB.ChangePass(emailBox.Text, newPass.Text);
+                ChangeDBData.ChangePass(emailBox.Text, newPass.Text);
 
                 Thread.Sleep(500);
                 var form = new LoginForm();

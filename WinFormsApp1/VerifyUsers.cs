@@ -39,10 +39,21 @@ namespace WinFormsApp1
 
         private void UsersWaitingForConfirm_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            var id=int.Parse(UsersWaitingForConfirm.Rows[e.RowIndex].Cells["Id"].Value.ToString());
-            WriteToDB.ConfirmUser(usersDic[id]);
-            WriteToDB.DeleteConfirmedUser(usersDic[id]);
-            UsersWaitingForConfirm.Rows.Remove(UsersWaitingForConfirm.CurrentRow);
+            var senderGrid = (DataGridView)sender;
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                var id = int.Parse(UsersWaitingForConfirm.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                if (e.ColumnIndex == 4)
+                {
+                    ChangeDBData.ConfirmUser(usersDic[id]);
+                    ChangeDBData.DeleteConfirmedUser(usersDic[id]);
+                }
+                else if (e.ColumnIndex == 5)
+                {
+                    ChangeDBData.DeleteUser(usersDic[id], "awaitingconfirmation");
+                }
+                UsersWaitingForConfirm.Rows.Remove(UsersWaitingForConfirm.CurrentRow);
+            }
         }
     }
 }

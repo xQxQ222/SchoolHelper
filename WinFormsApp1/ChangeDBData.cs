@@ -8,7 +8,7 @@ using System.Data;
 
 namespace WinFormsApp1
 {
-    internal class WriteToDB
+    public class ChangeDBData
     {
         public static bool RegisterANewUser(User userToReg) 
         {
@@ -101,6 +101,15 @@ namespace WinFormsApp1
             command.Parameters.Add("@author", MySqlDbType.VarChar).Value = news.author;
             command.Parameters.Add("@text", MySqlDbType.Text).Value = news.text;
             command.Parameters.Add("@image", MySqlDbType.Blob).Value = news.image;
+            dB.openConnection();
+            command.ExecuteNonQuery();
+            dB.closeConnection();
+        }
+        public static void DeleteUser(User userToDelete,string table)
+        {
+            DB dB=new DB();
+            MySqlCommand command=new MySqlCommand($"DELETE FROM `{table}` WHERE `{table}`.`login` LIKE @uL", dB.getConnection());
+            command.Parameters.Add("@uL",MySqlDbType.VarChar).Value=userToDelete._login;
             dB.openConnection();
             command.ExecuteNonQuery();
             dB.closeConnection();

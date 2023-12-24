@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WinFormsApp1
 {
-    class ReadFromDB
+    public class ReadFromDB
     {
         public static bool ReadCurrentUser(string login, string password)
         {

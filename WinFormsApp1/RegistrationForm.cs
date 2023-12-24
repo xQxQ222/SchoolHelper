@@ -77,7 +77,7 @@ namespace WinFormsApp1
 
             User newUser = new User(LoginField.Text, PasswordField.Text, name.Text, surname.Text, Otchestvo.Text, birthDate.Value, status.Text,additionalParameter.Text, emailBox.Text);
 
-            var userSuccessfullyRegistered = WriteToDB.RegisterANewUser(newUser);
+            var userSuccessfullyRegistered = ChangeDBData.RegisterANewUser(newUser);
 
             if (userSuccessfullyRegistered)
                 MessageBox.Show("Пользователь успешно занесен в систему. Ожидайте подтверждения аккаунта от администратора");

@@ -79,7 +79,7 @@ namespace WinFormsApp1
             news.author = comboBox1.Text;
             news.text = richTextBox1.Text;
             news.image = imageBytes;
-            WriteToDB.CreateNews(news);
+            ChangeDBData.CreateNews(news);
             MessageBox.Show("Новость успешна создана");
             var menu= new Menu();
             menu.Show();

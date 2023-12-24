@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp1
 {
-    class News
+    public class News
     {
         public int id;
         public string author;

@@ -36,6 +36,7 @@
             Status = new DataGridViewTextBoxColumn();
             AdditionalStatus = new DataGridViewTextBoxColumn();
             ConfirmButton = new DataGridViewButtonColumn();
+            Cancel = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)UsersWaitingForConfirm).BeginInit();
             SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             // 
             button3.Cursor = Cursors.Hand;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold);
             button3.Location = new Point(12, 526);
             button3.Name = "button3";
             button3.Size = new Size(117, 62);
@@ -56,7 +57,7 @@
             // 
             label8.AutoSize = true;
             label8.Cursor = Cursors.Hand;
-            label8.Font = new Font("Arial", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Font = new Font("Arial", 21.75F, FontStyle.Bold);
             label8.Location = new Point(768, 0);
             label8.Name = "label8";
             label8.Size = new Size(34, 34);
@@ -67,11 +68,10 @@
             // UsersWaitingForConfirm
             // 
             UsersWaitingForConfirm.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            UsersWaitingForConfirm.Columns.AddRange(new DataGridViewColumn[] { id, FIO, Status, AdditionalStatus, ConfirmButton });
-            UsersWaitingForConfirm.Location = new Point(28, 35);
+            UsersWaitingForConfirm.Columns.AddRange(new DataGridViewColumn[] { id, FIO, Status, AdditionalStatus, ConfirmButton, Cancel });
+            UsersWaitingForConfirm.Location = new Point(0, 35);
             UsersWaitingForConfirm.Name = "UsersWaitingForConfirm";
-            UsersWaitingForConfirm.RowTemplate.Height = 25;
-            UsersWaitingForConfirm.Size = new Size(735, 485);
+            UsersWaitingForConfirm.Size = new Size(802, 485);
             UsersWaitingForConfirm.TabIndex = 56;
             UsersWaitingForConfirm.CellContentClick += UsersWaitingForConfirm_CellContentClick_1;
             // 
@@ -87,7 +87,7 @@
             FIO.HeaderText = "ФИО";
             FIO.Name = "FIO";
             FIO.ReadOnly = true;
-            FIO.Width = 250;
+            FIO.Width = 180;
             // 
             // Status
             // 
@@ -104,11 +104,19 @@
             // 
             // ConfirmButton
             // 
-            ConfirmButton.HeaderText = "Кнопка подтверждения";
+            ConfirmButton.HeaderText = "";
             ConfirmButton.Name = "ConfirmButton";
             ConfirmButton.Text = "Подтвердить";
             ConfirmButton.UseColumnTextForButtonValue = true;
             ConfirmButton.Width = 150;
+            // 
+            // Cancel
+            // 
+            Cancel.HeaderText = "";
+            Cancel.Name = "Cancel";
+            Cancel.Text = "Отказать";
+            Cancel.UseColumnTextForButtonValue = true;
+            Cancel.Width = 150;
             // 
             // VerifyUsers
             // 
@@ -138,5 +146,6 @@
         private DataGridViewTextBoxColumn Status;
         private DataGridViewTextBoxColumn AdditionalStatus;
         private DataGridViewButtonColumn ConfirmButton;
+        private DataGridViewButtonColumn Cancel;
     }
 }
