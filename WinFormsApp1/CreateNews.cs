@@ -1,5 +1,6 @@
 ﻿//using MySql.Data.MySqlClient;
 using MySqlConnector;
+using SchoolHelperApp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,25 +22,9 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (var openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
-                }
-            }
+            WorkWithImages.SelectImage(pictureBox1);
         }
-        static byte[] ImageToByteArray(Image image)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                return ms.ToArray();
-            }
-        }
+        
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -74,11 +59,8 @@ namespace WinFormsApp1
 
         private void createNewsButton_Click(object sender, EventArgs e)
         {
-            byte[] imageBytes = ImageToByteArray(pictureBox1.Image);
-            var news = new News();
-            news.author = comboBox1.Text;
-            news.text = richTextBox1.Text;
-            news.image = imageBytes;
+            byte[] imageBytes = WorkWithImages.ImageToByteArray(pictureBox1.Image);
+            var news = new News(comboBox1.Text, richTextBox1.Text, imageBytes);
             ChangeDBData.CreateNews(news);
             MessageBox.Show("Новость успешна создана");
             var menu= new Menu();

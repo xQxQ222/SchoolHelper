@@ -1,4 +1,5 @@
-﻿namespace WinFormsApp1
+﻿using SchoolHelperApp.Properties;
+namespace WinFormsApp1
 {
     partial class ChangePass
     {
@@ -49,7 +50,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources._134146_mail_email_icon;
+            pictureBox4.Image = Resources._134146_mail_email_icon;
             pictureBox4.Location = new Point(108, 92);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(30, 30);
@@ -78,7 +79,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._8678775_fingerprint_biometric_security_icon;
+            pictureBox1.Image = Resources._8678775_fingerprint_biometric_security_icon;
             pictureBox1.Location = new Point(108, 178);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(30, 30);
@@ -142,7 +143,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources._1564520_code_open_password_icon;
+            pictureBox2.Image = Resources._1564520_code_open_password_icon;
             pictureBox2.Location = new Point(108, 254);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(30, 30);

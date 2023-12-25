@@ -69,12 +69,6 @@ namespace WinFormsApp1
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if (ReadFromDB.CheckIfNameOfUserInBD(LoginField.Text) || ReadFromDB.CheckIfEmailInBD(emailBox.Text))
-            {
-                MessageBox.Show("Пользователь с таким логином или E-mail уже существует");
-                return;
-            }
-
             User newUser = new User(LoginField.Text, PasswordField.Text, name.Text, surname.Text, Otchestvo.Text, birthDate.Value, status.Text,additionalParameter.Text, emailBox.Text);
 
             var userSuccessfullyRegistered = ChangeDBData.RegisterANewUser(newUser);
@@ -142,6 +136,7 @@ namespace WinFormsApp1
                 ConfirmCodeButton.Enabled = false;
                 label7.Visible = false;
                 isCorrectCode = true;
+                MessageBox.Show($"Почта {emailBox.Text} успешно подтверждена");
             }
             else
             {

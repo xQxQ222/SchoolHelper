@@ -44,14 +44,9 @@ namespace WinFormsApp1
             {
                 var id = int.Parse(UsersWaitingForConfirm.Rows[e.RowIndex].Cells["Id"].Value.ToString());
                 if (e.ColumnIndex == 4)
-                {
                     ChangeDBData.ConfirmUser(usersDic[id]);
-                    ChangeDBData.DeleteConfirmedUser(usersDic[id]);
-                }
                 else if (e.ColumnIndex == 5)
-                {
-                    ChangeDBData.DeleteUser(usersDic[id], "awaitingconfirmation");
-                }
+                    ChangeDBData.DeleteUser(usersDic[id],"awaitingconfirmation");
                 UsersWaitingForConfirm.Rows.Remove(UsersWaitingForConfirm.CurrentRow);
             }
         }

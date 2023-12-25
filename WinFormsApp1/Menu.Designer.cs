@@ -1,4 +1,5 @@
-﻿namespace WinFormsApp1
+﻿using SchoolHelperApp.Properties;
+namespace WinFormsApp1
 {
     partial class Menu
     {
@@ -153,8 +154,8 @@
             // 
             // pictureBox11
             // 
-            pictureBox11.Image = Properties.Resources._4230520_account_approve_verify_icon;
-            pictureBox11.InitialImage = Properties.Resources._9040308_journal_text_icon;
+            pictureBox11.Image = Resources._4230520_account_approve_verify_icon;
+            pictureBox11.InitialImage = Resources._9040308_journal_text_icon;
             pictureBox11.Location = new Point(325, 782);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(119, 118);
@@ -240,8 +241,8 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.Image = Properties.Resources._9055004_bx_table_icon;
-            pictureBox5.InitialImage = Properties.Resources._5402397_email_inbox_mail_message_envelope_icon;
+            pictureBox5.Image = Resources._9055004_bx_table_icon;
+            pictureBox5.InitialImage = Resources._5402397_email_inbox_mail_message_envelope_icon;
             pictureBox5.Location = new Point(325, 152);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(119, 118);
@@ -251,8 +252,8 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources._9040308_journal_text_icon;
-            pictureBox4.InitialImage = Properties.Resources._9040308_journal_text_icon;
+            pictureBox4.Image = Resources._9040308_journal_text_icon;
+            pictureBox4.InitialImage = Resources._9040308_journal_text_icon;
             pictureBox4.Location = new Point(325, 356);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(119, 118);
@@ -262,8 +263,8 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources._5402397_email_inbox_mail_message_envelope_icon;
-            pictureBox2.InitialImage = Properties.Resources._5402397_email_inbox_mail_message_envelope_icon;
+            pictureBox2.Image = Resources._5402397_email_inbox_mail_message_envelope_icon;
+            pictureBox2.InitialImage = Resources._5402397_email_inbox_mail_message_envelope_icon;
             pictureBox2.Location = new Point(325, 564);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(119, 118);
@@ -484,7 +485,7 @@
             // pictureBox10
             // 
             pictureBox10.Cursor = Cursors.Hand;
-            pictureBox10.Image = Properties.Resources._1814113_add_more_plus_icon;
+            pictureBox10.Image = Resources._1814113_add_more_plus_icon;
             pictureBox10.Location = new Point(1255, 89);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(55, 41);
@@ -496,7 +497,7 @@
             // pictureBox1
             // 
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Image = Properties.Resources._2d4d8dc558aeda96eea6b9fb4e682a4c;
+            pictureBox1.Image = Resources._2d4d8dc558aeda96eea6b9fb4e682a4c;
             pictureBox1.Location = new Point(126, 133);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(200, 200);
@@ -555,7 +556,7 @@
             // 
             // pictureBox14
             // 
-            pictureBox14.Image = Properties.Resources._809411_gauge_indication_indicator_miscellaneous_pressure_icon;
+            pictureBox14.Image = Resources._809411_gauge_indication_indicator_miscellaneous_pressure_icon;
             pictureBox14.Location = new Point(245, 180);
             pictureBox14.Name = "pictureBox14";
             pictureBox14.Size = new Size(30, 30);
@@ -565,7 +566,7 @@
             // 
             // pictureBox13
             // 
-            pictureBox13.Image = Properties.Resources._9044817_rain_drop_icon;
+            pictureBox13.Image = Resources._9044817_rain_drop_icon;
             pictureBox13.Location = new Point(149, 180);
             pictureBox13.Name = "pictureBox13";
             pictureBox13.Size = new Size(30, 30);
@@ -575,7 +576,7 @@
             // 
             // pictureBox12
             // 
-            pictureBox12.Image = Properties.Resources._7795642_weather_wind_breeze_icon;
+            pictureBox12.Image =Resources._7795642_weather_wind_breeze_icon;
             pictureBox12.Location = new Point(12, 180);
             pictureBox12.Name = "pictureBox12";
             pictureBox12.Size = new Size(30, 30);
@@ -683,7 +684,7 @@
             // pictureBox3
             // 
             pictureBox3.Cursor = Cursors.Hand;
-            pictureBox3.Image = Properties.Resources._9024008_user_circle_gear_fill_icon;
+            pictureBox3.Image = Resources._9024008_user_circle_gear_fill_icon;
             pictureBox3.Location = new Point(377, 940);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(60, 60);

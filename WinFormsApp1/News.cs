@@ -12,5 +12,19 @@ namespace WinFormsApp1
         public string author;
         public string text;
         public byte[] image;
+        public News(int id, string author, string text, byte[] image)
+        {
+            this.id = id;
+            this.author = author;
+            this.text = text;
+            this.image = image;
+        }
+
+        public News(string author,string text, byte[] image)
+        {
+            this.author = author;
+            this.text = text;
+            this.image = image;
+        }
     }
 }

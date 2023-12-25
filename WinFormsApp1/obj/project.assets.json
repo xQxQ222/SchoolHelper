@@ -757,9 +757,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\SchoolHelper\\SchoolHelper\\WinFormsApp1\\WinFormsApp1.csproj",
-      "projectName": "WinFormsApp1",
-      "projectPath": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\SchoolHelper\\SchoolHelper\\WinFormsApp1\\WinFormsApp1.csproj",
+      "projectUniqueName": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\SchoolHelper\\SchoolHelper\\WinFormsApp1\\SchoolHelperApp.csproj",
+      "projectName": "SchoolHelperApp",
+      "projectPath": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\SchoolHelper\\SchoolHelper\\WinFormsApp1\\SchoolHelperApp.csproj",
       "packagesPath": "C:\\Users\\nerou\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\SchoolHelper\\SchoolHelper\\WinFormsApp1\\obj\\",
       "projectStyle": "PackageReference",

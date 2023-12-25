@@ -81,7 +81,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources._8201380_unlock_padlock_password_ui_lock_icon;
+            pictureBox2.Image = SchoolHelperApp.Properties.Resources._8201380_unlock_padlock_password_ui_lock_icon;
             pictureBox2.Location = new Point(35, 246);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(30, 30);
@@ -91,7 +91,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._1564535_customer_user_userphoto_account_person_icon;
+            pictureBox1.Image = SchoolHelperApp.Properties.Resources._1564535_customer_user_userphoto_account_person_icon;
             pictureBox1.Location = new Point(35, 178);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(30, 30);
@@ -186,7 +186,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.png_transparent_name_tag_computer_icons_logo_id_card_miscellaneous_text_silhouette;
+            pictureBox3.Image = SchoolHelperApp.Properties.Resources.png_transparent_name_tag_computer_icons_logo_id_card_miscellaneous_text_silhouette;
             pictureBox3.Location = new Point(471, 179);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(30, 30);
@@ -270,7 +270,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources._134146_mail_email_icon;
+            pictureBox4.Image = SchoolHelperApp.Properties.Resources._134146_mail_email_icon;
             pictureBox4.Location = new Point(35, 306);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(30, 30);
@@ -340,7 +340,7 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.Image = Properties.Resources._8678775_fingerprint_biometric_security_icon;
+            pictureBox5.Image = SchoolHelperApp.Properties.Resources._8678775_fingerprint_biometric_security_icon;
             pictureBox5.Location = new Point(35, 380);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(30, 30);

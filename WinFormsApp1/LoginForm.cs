@@ -10,14 +10,9 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
-            String login = LoginField.Text;
-            String password = PasswordField.Text;
-
-            bool userIsLoggedInSuccessfully = ReadFromDB.ReadCurrentUser(login, password); // выглядит нелогично
-
-            if (userIsLoggedInSuccessfully)
+            if (ReadFromDB.ReadCurrentUser(LoginField.Text, PasswordField.Text))
             {
                 MessageBox.Show("Пользователь успешно авторизован");
                 Thread.Sleep(500);
@@ -30,7 +25,7 @@ namespace WinFormsApp1
                 MessageBox.Show("Неправильный логин или пароль");
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void BackButton_Click(object sender, EventArgs e)
         {
             var startScreen = new StartScreen();
             startScreen.Show();
@@ -39,13 +34,13 @@ namespace WinFormsApp1
 
         private void ShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            if (ShowPassword.Checked == true)
+            if (ShowPasswordChecker.Checked == true)
                 PasswordField.UseSystemPasswordChar = false;
-            else if (ShowPassword.Checked == false)
+            else if (ShowPasswordChecker.Checked == false)
                 PasswordField.UseSystemPasswordChar = true;
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -65,7 +60,7 @@ namespace WinFormsApp1
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void ChangePasswordLink_Click(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var form = new ChangePass();
             form.Show();

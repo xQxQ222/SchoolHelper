@@ -13,7 +13,13 @@ namespace WinFormsApp1
         public static bool RegisterANewUser(User userToReg) 
         {
             bool userSuccessfullyregistered;
-
+            if (ReadFromDB.CheckIfLoginOfUserInBD(userToReg._login,"users") || ReadFromDB.CheckIfEmailInBD(userToReg._email,"users")|| 
+                ReadFromDB.CheckIfLoginOfUserInBD(userToReg._login, "awaitingconfirmation") 
+                || ReadFromDB.CheckIfEmailInBD(userToReg._email, "awaitingconfirmation"))
+            {
+                MessageBox.Show("Пользователь с таким логином или E-mail уже существует");
+                return false;
+            }
             DB db = new DB();
             MySqlCommand command = new MySqlCommand("INSERT INTO `awaitingconfirmation` (`login`, `password`, `name`, `surname`, `patronymic`, `birthdate`, `status`, `additionalParameter`, `email`) VALUES (@log,@pass,@name,@surname,@otch,@birthDate,@status,@additionalParameter,@email);", db.getConnection());
 
@@ -66,7 +72,7 @@ namespace WinFormsApp1
 
         public static void ConfirmUser(User userToConfirm)
         {
-
+            ChangeDBData.DeleteUser(userToConfirm, "awaitingconfirmation");
             DB db = new DB();
             MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `password`, `name`, `last name`, `otchestvo`, `birthdate`, `status`, `additionalParameter`, `email`) VALUES (@log,@pass,@name,@surname,@otch,@birthDate,@status,@additionalParameter,@email);", db.getConnection());
 
@@ -84,16 +90,6 @@ namespace WinFormsApp1
             command.ExecuteNonQuery();
             db.closeConnection();
         }
-        public static void DeleteConfirmedUser(User userToDelete)
-        {
-            DB db = new DB();
-            MySqlCommand command= new MySqlCommand("DELETE FROM `awaitingconfirmation` WHERE `awaitingconfirmation`.`id` = @id", db.getConnection());
-            command.Parameters.Add("@id", MySqlDbType.Int32).Value = userToDelete._id;
-            db.openConnection();
-            command.ExecuteNonQuery();
-            db.closeConnection();
-        }
-
         public static void CreateNews(News news)
         {
             DB dB = new DB();

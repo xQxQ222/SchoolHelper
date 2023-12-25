@@ -1,4 +1,5 @@
-﻿namespace WinFormsApp1
+﻿using SchoolHelperApp.Properties;
+namespace WinFormsApp1
 {
     partial class Profile
     {
@@ -57,7 +58,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._628287_anonym_avatar_default_head_person_icon;
+            pictureBox1.Image = Resources._628287_anonym_avatar_default_head_person_icon;
             pictureBox1.Location = new Point(64, 37);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(200, 200);

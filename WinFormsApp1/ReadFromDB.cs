@@ -64,14 +64,14 @@ namespace WinFormsApp1
             return list;
         }
 
-        public static bool CheckIfEmailInBD(string email) // тут точно строковый тип???
+        public static bool CheckIfEmailInBD(string email,string table)
         {
             DB db = new DB();
             DataTable dt = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `awaitingconfirmation` WHERE `email`=@uE", db.getConnection());
+            MySqlCommand command = new MySqlCommand($"SELECT * FROM `{table}` WHERE `email`=@uE", db.getConnection());
             command.Parameters.Add("@uE", MySqlDbType.VarChar).Value = email;
 
             adapter.SelectCommand = command;
@@ -80,14 +80,14 @@ namespace WinFormsApp1
             return dt.Rows.Count > 0;
         }
 
-        public static bool CheckIfNameOfUserInBD(string nameOfUser)
+        public static bool CheckIfLoginOfUserInBD(string nameOfUser,string table)
         {
             DB db = new DB();
             DataTable dt = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `awaitingconfirmation` WHERE `login`=@uL", db.getConnection());
+            MySqlCommand command = new MySqlCommand($"SELECT * FROM `{table}` WHERE `login`=@uL", db.getConnection());
             command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = nameOfUser;
             adapter.SelectCommand = command;
             adapter.Fill(dt);
@@ -231,11 +231,7 @@ namespace WinFormsApp1
                 foreach(DataRow row in dt.Rows)
                 {
                     reader.Read();
-                    var news=new News();
-                    news.id= reader.GetInt32(0);
-                    news.author = "Автор: " + reader.GetString(1);
-                    news.text = reader.GetString(2);
-                    news.image=(byte[])reader[3];
+                    var news=new News(reader.GetInt32(0), "Автор: " + reader.GetString(1), reader.GetString(2), (byte[])reader[3]);
                     newsArray.Add(news);
                 }
             }

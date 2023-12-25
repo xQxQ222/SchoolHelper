@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System.Net;
 using WinFormsApp1.OpenWeather;
-using WinFormsApp1.Properties;
+using SchoolHelperApp.Properties;
+using SchoolHelperApp;
 
 namespace WinFormsApp1
 {
@@ -21,47 +22,40 @@ namespace WinFormsApp1
         private void ShowNews()
         {
             var news = ReadFromDB.GetNewsFromDB();
-            var firstNews = new News();
-            var secondNews= new News();
-            var thirdNews= new News();
-            var fourthNews= new News();
+            var firstNews = new News("","",null);
+            var secondNews= new News("", "", null);
+            var thirdNews= new News("", "", null);
+            var fourthNews= new News("", "", null);
             if (news.Length >= 1)
             {
                 firstNews = news[news.Length - 1];
-                newsIcon1.Image = ByteArrayToImage(firstNews.image);
+                newsIcon1.Image = WorkWithImages.ByteArrayToImage(firstNews.image);
                 newsText1.Text=firstNews.text;
                 newsAuthor1.Text=firstNews.author;
             }
             if(news.Length >= 2)
             {
                 secondNews = news[news.Length - 2];
-                newsIcon2.Image = ByteArrayToImage(secondNews.image);
+                newsIcon2.Image = WorkWithImages.ByteArrayToImage(secondNews.image);
                 newsText2.Text = secondNews.text;
                 newsAuthor2.Text = secondNews.author;
             }
             if(news.Length >= 3)
             {
                 thirdNews = news[news.Length - 3];
-                newsIcon3.Image = ByteArrayToImage(thirdNews.image);
+                newsIcon3.Image = WorkWithImages.ByteArrayToImage(thirdNews.image);
                 newsText3.Text = thirdNews.text;
                 newsAuthor3.Text = thirdNews.author;
             }
             if(news.Length >= 4)
             {
                 fourthNews = news[news.Length - 4];
-                newsIcon4.Image = ByteArrayToImage(fourthNews.image);
+                newsIcon4.Image = WorkWithImages.ByteArrayToImage(fourthNews.image);
                 newsText4.Text = fourthNews.text;
                 newsAuthor4.Text = fourthNews.author;
             }
         }
-        private static Image ByteArrayToImage(byte[] blobData)
-        {
-            using (MemoryStream ms = new MemoryStream(blobData))
-            {
-                Image image = Image.FromStream(ms);
-                return image;
-            }
-        }
+        
         private void PrepareToLoad()
         {
             flowLayoutPanel1.Visible = false;
@@ -139,9 +133,9 @@ namespace WinFormsApp1
         private void isPEOutside(double temp, double windSpeed)
         {
 
-            PrimarySchoolPEIcon.Image = Resources.Decline;
-            MiddleSchoolPEIcon.Image = Resources.Decline;
-            HighSchoolPEIcon.Image = Resources.Decline;
+            PrimarySchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Decline;
+            MiddleSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Decline;
+            HighSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Decline;
             var winter = new int[] { 12, 1, 2 };
             if (winter.Contains(DateTime.Now.Month))
             {
@@ -149,58 +143,58 @@ namespace WinFormsApp1
                 {
                     if (temp > -10)
                     {
-                        PrimarySchoolPEIcon.Image = Resources.Confirm;
-                        MiddleSchoolPEIcon.Image = Resources.Confirm;
-                        HighSchoolPEIcon.Image = Resources.Confirm;
+                        PrimarySchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
+                        MiddleSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
+                        HighSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
                     }
                     else if (temp > -14)
                     {
-                        MiddleSchoolPEIcon.Image = Resources.Confirm;
-                        HighSchoolPEIcon.Image = Resources.Confirm;
+                        MiddleSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
+                        HighSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
                     }
                     else if (temp > -16)
-                        HighSchoolPEIcon.Image = Resources.Confirm;
+                        HighSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
                 }
                 else if (windSpeed <= 5 && windSpeed > 0)
                 {
                     if (temp > -6)
                     {
-                        PrimarySchoolPEIcon.Image = Resources.Confirm;
-                        MiddleSchoolPEIcon.Image = Resources.Confirm;
-                        HighSchoolPEIcon.Image = Resources.Confirm;
+                        PrimarySchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
+                        MiddleSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
+                        HighSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
                     }
                     else if (temp > -10)
                     {
-                        MiddleSchoolPEIcon.Image = Resources.Confirm;
-                        HighSchoolPEIcon.Image = Resources.Confirm;
+                        MiddleSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
+                        HighSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
                     }
                     else if (temp > -15)
-                        HighSchoolPEIcon.Image = Resources.Confirm;
+                        HighSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
                 }
                 else if (windSpeed <= 10 && windSpeed > 5)
                 {
                     if (temp > -3)
                     {
-                        PrimarySchoolPEIcon.Image = Resources.Confirm;
-                        MiddleSchoolPEIcon.Image = Resources.Confirm;
-                        HighSchoolPEIcon.Image = Resources.Confirm;
+                        PrimarySchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
+                        MiddleSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
+                        HighSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
                     }
                     else if (temp > -6)
                     {
-                        MiddleSchoolPEIcon.Image = Resources.Confirm;
-                        HighSchoolPEIcon.Image = Resources.Confirm;
+                        MiddleSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
+                        HighSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
                     }
                     else if (temp > -10)
-                        HighSchoolPEIcon.Image = Resources.Confirm;
+                        HighSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
                 }
             }
             else
             {
                 if (temp > 14)
                 {
-                    PrimarySchoolPEIcon.Image = Resources.Confirm;
-                    MiddleSchoolPEIcon.Image = Resources.Confirm;
-                    HighSchoolPEIcon.Image = Resources.Confirm;
+                    PrimarySchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
+                    MiddleSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
+                    HighSchoolPEIcon.Image = SchoolHelperApp.Properties.Resources.Confirm;
                 }
             }
 

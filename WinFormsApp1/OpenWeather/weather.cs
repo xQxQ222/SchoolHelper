@@ -1,4 +1,4 @@
-﻿using WinFormsApp1.Properties;
+﻿using SchoolHelperApp.Properties;
 
 namespace WinFormsApp1.OpenWeather
 {

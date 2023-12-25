@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5zuJdpiURrMy4b32tyK41TeENdQegbFwZKoaSeseMdQinth7aiGzKKonLzeL0CedRlbyCDt+K6jSDfO18WjaMg==",
+  "dgSpecHash": "zoSO3xeaSUXDnQs/up70wY8TNEyAF51lPH1ZStIzz0WSKYTuKMJ7/r2k82C1C97uZ8jfTbCUjtACSmQoeq0kHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\SchoolHelper\\SchoolHelper\\WinFormsApp1\\WinFormsApp1.csproj",
+  "projectFilePath": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\SchoolHelper\\SchoolHelper\\WinFormsApp1\\SchoolHelperApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nerou\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
     "C:\\Users\\nerou\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
