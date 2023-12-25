@@ -528,7 +528,7 @@
           }
         }
       },
-      "WinFormsApp1/1.0.0": {
+      "SchoolHelperApp/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
@@ -539,10 +539,10 @@
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
-          "bin/placeholder/WinFormsApp1.dll": {}
+          "bin/placeholder/SchoolHelperApp.dll": {}
         },
         "runtime": {
-          "bin/placeholder/WinFormsApp1.dll": {}
+          "bin/placeholder/SchoolHelperApp.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WindowsForms"
@@ -1359,10 +1359,10 @@
         "version.txt"
       ]
     },
-    "WinFormsApp1/1.0.0": {
+    "SchoolHelperApp/1.0.0": {
       "type": "project",
-      "path": "../WinFormsApp1/WinFormsApp1.csproj",
-      "msbuildProject": "../WinFormsApp1/WinFormsApp1.csproj"
+      "path": "../WinFormsApp1/SchoolHelperApp.csproj",
+      "msbuildProject": "../WinFormsApp1/SchoolHelperApp.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1371,7 +1371,7 @@
       "NUnit >= 4.0.1",
       "NUnit.Analyzers >= 3.10.0",
       "NUnit3TestAdapter >= 4.5.0",
-      "WinFormsApp1 >= 1.0.0"
+      "SchoolHelperApp >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1407,8 +1407,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\SchoolHelper\\SchoolHelper\\WinFormsApp1\\WinFormsApp1.csproj": {
-              "projectPath": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\SchoolHelper\\SchoolHelper\\WinFormsApp1\\WinFormsApp1.csproj"
+            "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\SchoolHelper\\SchoolHelper\\WinFormsApp1\\SchoolHelperApp.csproj": {
+              "projectPath": "C:\\Users\\nerou\\OneDrive\\Рабочий стол\\SchoolHelper\\SchoolHelper\\WinFormsApp1\\SchoolHelperApp.csproj"
             }
           }
         }

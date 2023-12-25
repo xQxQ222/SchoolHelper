@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "WinFormsApp1/1.0.0": {
+      "SchoolHelperApp/1.0.0": {
         "dependencies": {
           "MySqlConnector": "2.3.3",
           "NUnit": "4.0.1",
@@ -17,7 +17,7 @@
           "MySql.Data": "8.1.0.0"
         },
         "runtime": {
-          "WinFormsApp1.dll": {}
+          "SchoolHelperApp.dll": {}
         }
       },
       "Microsoft.Extensions.Logging.Abstractions/7.0.1": {
@@ -147,7 +147,7 @@
     }
   },
   "libraries": {
-    "WinFormsApp1/1.0.0": {
+    "SchoolHelperApp/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -12,7 +12,7 @@
           "NUnit": "4.0.1",
           "NUnit.Analyzers": "3.10.0",
           "NUnit3TestAdapter": "4.5.0",
-          "WinFormsApp1": "1.0.0"
+          "SchoolHelperApp": "1.0.0"
         },
         "runtime": {
           "TestLibrary.dll": {}
@@ -404,7 +404,7 @@
         }
       },
       "System.Security.Principal.Windows/4.7.0": {},
-      "WinFormsApp1/1.0.0": {
+      "SchoolHelperApp/1.0.0": {
         "dependencies": {
           "MySqlConnector": "2.3.3",
           "NUnit": "4.0.1",
@@ -413,7 +413,7 @@
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {
-          "WinFormsApp1.dll": {}
+          "SchoolHelperApp.dll": {}
         }
       }
     }
@@ -571,7 +571,7 @@
       "path": "system.security.principal.windows/4.7.0",
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
     },
-    "WinFormsApp1/1.0.0": {
+    "SchoolHelperApp/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

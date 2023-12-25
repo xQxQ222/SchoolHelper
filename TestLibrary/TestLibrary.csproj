@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WinFormsApp1\WinFormsApp1.csproj" />
+    <ProjectReference Include="..\WinFormsApp1\SchoolHelperApp.csproj" />
   </ItemGroup>
 
 </Project>

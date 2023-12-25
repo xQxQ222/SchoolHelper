@@ -4,14 +4,9 @@ C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLi
 C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\obj\Debug\net8.0-windows\TestLibrary.AssemblyInfo.cs
 C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\obj\Debug\net8.0-windows\TestLibrary.csproj.CoreCompileInputs.cache
 C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\obj\Debug\net8.0-windows\TestLibrary.sourcelink.json
-C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\WinFormsApp1.deps.json
-C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\WinFormsApp1.runtimeconfig.json
-C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\WinFormsApp1.exe
 C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\TestLibrary.deps.json
 C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\TestLibrary.dll
 C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\TestLibrary.pdb
-C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\WinFormsApp1.dll
-C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\WinFormsApp1.pdb
 C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\obj\Debug\net8.0-windows\TestLibrary.csproj.CopyComplete
 C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\obj\Debug\net8.0-windows\TestLibrary.dll
 C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\obj\Debug\net8.0-windows\refint\TestLibrary.dll
@@ -112,3 +107,8 @@ C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLi
 C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\obj\Debug\net8.0-windows\TestLibrary.genruntimeconfig.cache
+C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\SchoolHelperApp.deps.json
+C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\SchoolHelperApp.runtimeconfig.json
+C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\SchoolHelperApp.exe
+C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\SchoolHelperApp.dll
+C:\Users\nerou\OneDrive\Рабочий стол\SchoolHelper\SchoolHelper\TestLibrary\bin\Debug\net8.0-windows\SchoolHelperApp.pdb
